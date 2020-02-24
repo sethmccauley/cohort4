@@ -22,7 +22,12 @@ const syntaxes = {
     isBoolean: (bool) => {
         if (typeof(bool) === 'boolean') return true;
         return false;
-    }
+    },
+
+    isArray: (array) => {
+        if (array instanceof Array) return true;
+        return false;
+    },
 
 }
 

@@ -17,3 +17,7 @@ test('Is this a boolean?', () => {
     expect(syntaxes.isBoolean({})).toBe(false);
     expect(syntaxes.isBoolean(false)).toBe(true);
 })
+
+test('Is this an array', () => {
+    expect(syntaxes.isArray([])).toBe(true);
+})
