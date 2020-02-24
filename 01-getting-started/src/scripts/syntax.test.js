@@ -53,6 +53,11 @@ test('Can I connect some strings?', () => {
 });
 
 test('What is the correct answer if I don\'t know it?', () => {
+    expect(syntaxes.getDefaultAnswer()).not.toBe("D");
     expect(syntaxes.getDefaultAnswer("B")).toBe("B");
     expect(syntaxes.getDefaultAnswer()).toBe("C");
+});
+
+test('Test to insert value at start of array', () => {
+    expect(syntaxes.insertAtStart("Apple", ["Grape", "Fish", "Beef"])).toEqual(["Apple", "Grape", "Fish", "Beef"]);
 });

@@ -83,6 +83,15 @@ const syntaxes = {
 // update values
 // -----
 
+    insertAtStart(value, array) {
+        let returnArray = [value];
+        array.forEach(element => {
+            returnArray.push(element);
+        });
+        return returnArray;
+    },
+    
+
 // -----
 // loops 
 // for
