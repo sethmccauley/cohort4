@@ -67,6 +67,7 @@ const syntaxes = {
 // returns
 // -----
 
+    // Function to take any number of parameters.
     stringTogether: (...strings) => {
         return strings.join("");
     },
