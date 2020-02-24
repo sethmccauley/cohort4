@@ -30,7 +30,7 @@ const syntaxes = {
     },
 
     isDictionary: (dict) => {
-        
+        if (dict.constructor == Object) return true;
         return false;
     },
 
@@ -41,13 +41,26 @@ const syntaxes = {
         return false;
     },
 
-    arrayIncludes: (value, array) => {
+    isUndefined: (value) => {
+        if (typeof value == 'undefined') return true;
         return false
-    }
-}
+    },
 
 // -----
 // sample if / else
+// -----
+
+    // In Poker, when should I hit or stand?
+    hitOrStand: (value) => {
+        if(value < 17){
+            return "Hit";
+        } else if (value < 22 ){
+            return "Stand"
+        } else {
+            return "Play Again?";
+        }
+    }
+
 // -----
 // functions
 // parameters
@@ -68,5 +81,5 @@ const syntaxes = {
 // Objects / Dictionaries
 // declare object
 // lookup key to retrieve value
-
+}
 export default syntaxes
