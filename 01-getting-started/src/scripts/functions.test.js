@@ -15,3 +15,10 @@ test('Does that add function work?', () => {
     expect(functions.add(1,2)).toBe(3);
     expect(functions.add(101,202)).toBe(303);
 });
+
+test('Testing even-ness', () => {
+    expect(functions.isEven(2)).toBe(true);
+    expect(functions.isEven(1)).toBe(false);
+    expect(functions.isEven(0)).toBe(true);
+    expect(functions.isEven(10.5)).toBe(false);
+})

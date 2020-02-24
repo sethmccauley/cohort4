@@ -14,9 +14,12 @@ const functions = {
 
     subtract: (num1, num2) => {
         return num1 - num2;
-    }
+    },
 
-    
+    isEven: (num) => {
+        if (num%2 == 0) return true;
+        return false;
+    }
 };
 
 export default functions;
