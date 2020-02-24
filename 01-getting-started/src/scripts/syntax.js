@@ -9,7 +9,8 @@ const syntaxes = {
     },
 
     isString: (string) => {
-        return true;
+        if (typeof(string) == 'string') return true;
+        return false;
     }
 }
 // string

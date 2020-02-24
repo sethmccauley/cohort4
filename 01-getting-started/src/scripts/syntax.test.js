@@ -8,4 +8,6 @@ test('Is this a number?', () => {
 
 test('Is this a string?', () => {
     expect(syntaxes.isString(1)).toBe(false);
+    expect(syntaxes.isString('Am I?')).toBe(true);
+    expect(syntaxes.isString(true)).toBe(false);
 })
