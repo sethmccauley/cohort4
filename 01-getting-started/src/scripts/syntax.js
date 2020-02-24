@@ -1,23 +1,31 @@
 // -----
 // define attributes / variables
 // number
-const syntaxes = {
-
-    isNumber: (num) => {
-        if (typeof(num) == 'number') return true;
-        return false
-    },
-
-    isString: (string) => {
-        if (typeof(string) == 'string') return true;
-        return false;
-    }
-}
 // string
 // boolean
 // array
 // dictionary / objects
 // undefined
+// -----
+const syntaxes = {
+
+    isNumber: (num) => {
+        if (typeof(num) === 'number') return true;
+        return false
+    },
+
+    isString: (string) => {
+        if (typeof(string) === 'string') return true;
+        return false;
+    },
+
+    isBoolean: (bool) => {
+        if (typeof(bool) === 'boolean') return true;
+        return false;
+    }
+
+}
+
 // -----
 // sample if / else
 // -----

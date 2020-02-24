@@ -11,3 +11,9 @@ test('Is this a string?', () => {
     expect(syntaxes.isString('Am I?')).toBe(true);
     expect(syntaxes.isString(true)).toBe(false);
 })
+
+test('Is this a boolean?', () => {
+    expect(syntaxes.isBoolean(true)).toBe(true);
+    expect(syntaxes.isBoolean({})).toBe(false);
+    expect(syntaxes.isBoolean(false)).toBe(true);
+})
