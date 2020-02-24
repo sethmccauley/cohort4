@@ -59,17 +59,30 @@ const syntaxes = {
         } else {
             return "Play Again?";
         }
-    }
+    },
 
 // -----
 // functions
 // parameters
 // returns
 // -----
+
+    stringTogether: (...strings) => {
+        return strings.join("");
+    },
+
+    // On a scan-tron, if you don't know the answer, it's always C.
+    getDefaultAnswer: (answer = "C") => {
+        return answer;
+    },
+
+// -----
 // arrays
 // add to the front
 // add to the end
 // update values
+// -----
+
 // -----
 // loops 
 // for
@@ -77,9 +90,12 @@ const syntaxes = {
 // while
 // do while
 // forEach (with array and function)
+// -----
+
 // ----
 // Objects / Dictionaries
 // declare object
 // lookup key to retrieve value
+// -----
 }
 export default syntaxes

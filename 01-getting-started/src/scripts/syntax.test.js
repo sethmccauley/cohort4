@@ -44,4 +44,15 @@ test('Should I hit or stand?', () => {
     expect(syntaxes.hitOrStand(16)).toBe("Hit");
     expect(syntaxes.hitOrStand(17)).toBe("Stand");
     expect(syntaxes.hitOrStand(25)).not.toBe("Hit");
+    expect(syntaxes.hitOrStand(30)).toBe("Play Again?");
+});
+
+test('Can I connect some strings?', () => {
+    expect(syntaxes.stringTogether("Hello ", "World.")).toBe("Hello World.");
+    expect(syntaxes.stringTogether("1", "2", "3", " what?")).toBe("123 what?");
+});
+
+test('What is the correct answer if I don\'t know it?', () => {
+    expect(syntaxes.getDefaultAnswer("B")).toBe("B");
+    expect(syntaxes.getDefaultAnswer()).toBe("C");
 });
