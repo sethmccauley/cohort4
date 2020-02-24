@@ -60,4 +60,10 @@ test('What is the correct answer if I don\'t know it?', () => {
 
 test('Test to insert value at start of array', () => {
     expect(syntaxes.insertAtStart("Apple", ["Grape", "Fish", "Beef"])).toEqual(["Apple", "Grape", "Fish", "Beef"]);
+    expect(syntaxes.insertAtStart("One", ["Two", "Three"])).toEqual(["One", "Two", "Three"]);
+});
+
+test('Test for adding a value to the end of an array.', () => {
+    expect(syntaxes.addToEnd("Last", ["First"])).toEqual(["First", "Last"]);
+    expect(syntaxes.addToEnd("One", ["Two"])).not.toEqual(["One", "Two"]);
 });

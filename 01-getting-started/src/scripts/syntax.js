@@ -90,7 +90,12 @@ const syntaxes = {
         });
         return returnArray;
     },
-    
+
+    addToEnd(value, array) {
+        let returnArray = array.map(el => el);
+        returnArray.push(value);
+        return returnArray;
+    },
 
 // -----
 // loops 
