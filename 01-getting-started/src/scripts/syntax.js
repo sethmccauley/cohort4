@@ -29,6 +29,10 @@ const syntaxes = {
         return false;
     },
 
+    
+    listProperties: (dict) => {
+        return [];
+    }
 }
 
 // -----

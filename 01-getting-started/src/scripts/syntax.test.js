@@ -20,4 +20,9 @@ test('Is this a boolean?', () => {
 
 test('Is this an array', () => {
     expect(syntaxes.isArray([])).toBe(true);
+    expect(syntaxes.isArray({})).toBe(false);
+})
+
+test('Checking the properties of a Dictionary/Object.', () => {
+    expect(syntaxes.listProperties({Name: "Seth"})).toBe(["Name"]);
 })
