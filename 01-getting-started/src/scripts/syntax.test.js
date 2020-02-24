@@ -23,6 +23,7 @@ test('Is this an array', () => {
     expect(syntaxes.isArray({})).toBe(false);
 })
 
-test('Checking the properties of a Dictionary/Object.', () => {
-    expect(syntaxes.listProperties({Name: "Seth"})).toBe(["Name"]);
+test('Finding a property in a Dictionary/Object.', () => {
+    expect(syntaxes.hasProperty("Name", {Name: "Seth", Age: 37})).toBe(true);
+    expect(syntaxes.hasProperty("Age", {Name: "Seth"})).toBe(false);
 })

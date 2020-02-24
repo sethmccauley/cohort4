@@ -30,8 +30,10 @@ const syntaxes = {
     },
 
     
-    listProperties: (dict) => {
-        return [];
+    hasProperty: (key, dict) => {
+        let propArray = Object.keys(dict);
+        if (propArray.includes(key)) return true;
+        return false;
     }
 }
 
