@@ -29,11 +29,20 @@ const syntaxes = {
         return false;
     },
 
-    
+    isDictionary: (dict) => {
+        
+        return false;
+    },
+
+    // !!!For Fun!!! Method to detect presence of property
     hasProperty: (key, dict) => {
         let propArray = Object.keys(dict);
         if (propArray.includes(key)) return true;
         return false;
+    },
+
+    arrayIncludes: (value, array) => {
+        return false
     }
 }
 
