@@ -37,7 +37,7 @@ test('Finding a property in a Dictionary/Object.', () => {
 test('Is this value undefined?', () => {
     expect(syntaxes.isUndefined(undefined)).toBe(true);
     expect(syntaxes.isUndefined(100)).toBe(false);
-    expect(syntaxes.isUndefined(() => { return false })).toBe(false);
+    expect(syntaxes.isUndefined([].find(a => a))).toBe(true);
 });
 
 test('Should I hit or stand?', () => {
