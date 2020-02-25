@@ -147,6 +147,10 @@ const syntaxes = {
     },
 
     //forEach
+    decrementArrayValues: (array) => {
+        let returnArray = array.map(el => el -1);
+        return returnArray;
+    },
 
 // ----
 // Objects / Dictionaries

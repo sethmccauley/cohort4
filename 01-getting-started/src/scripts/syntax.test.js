@@ -94,3 +94,9 @@ test('Double a num, then test how many it takes to reach target.', () => {
     expect(syntaxes.doublingNumbers(5, -10)).toBe(undefined);
     expect(syntaxes.doublingNumbers(-1, -2)).toBe(undefined);
 });
+
+test('Reduce the numeric values in the array by 1.', () => {
+    expect(syntaxes.decrementArrayValues([2,1])).toEqual([1,0]);
+    expect(syntaxes.decrementArrayValues([3,2,1])).toEqual([2,1,0]);
+    expect(syntaxes.decrementArrayValues([-1])).toEqual([-2]);
+});
