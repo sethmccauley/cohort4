@@ -86,3 +86,11 @@ test('While Loop for numbers to string.', () => {
     expect(syntaxes.numsToString(0)).toBe("");
     expect(syntaxes.numsToString(-5)).toBe("");
 });
+
+test('Double a num, then test how many it takes to reach target.', () => {
+    expect(syntaxes.doublingNumbers(5, 25)).toBe(3);
+    expect(syntaxes.doublingNumbers(2, 4)).toBe(1);
+    expect(syntaxes.doublingNumbers(-10, 10)).toBe(undefined);
+    expect(syntaxes.doublingNumbers(5, -10)).toBe(undefined);
+    expect(syntaxes.doublingNumbers(-1, -2)).toBe(undefined);
+});

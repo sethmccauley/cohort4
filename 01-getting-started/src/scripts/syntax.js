@@ -133,10 +133,18 @@ const syntaxes = {
             num--;
         }
         return string;
-    }
+    },
 
     //do while
-
+    doublingNumbers: (num, target) => {
+        let timesDoubled = 0;
+        if(num < 0 || target < 0) return undefined;
+        do {
+            num *= 2;
+            timesDoubled++
+        } while (num < target);
+        return timesDoubled;
+    },
 
     //forEach
 
