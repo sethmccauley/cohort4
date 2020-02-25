@@ -107,6 +107,7 @@ const syntaxes = {
 // forEach (with array and function)
 // -----
 
+    //for
     countLetters: (string) => {
         let letterCount = 0
         for(let i = 0; i < string.length; i++) {
@@ -115,15 +116,30 @@ const syntaxes = {
         return letterCount;
     },
 
+    //for/in
     findRedValue: (obj) => {
-        let redValue = 0;
+        let redValue = undefined;
         for (const key in obj) {
             if (key == "red") redValue = obj[key];
         }
         return redValue;
     },
 
-    
+    //while
+    numsToString: (num) => {
+        let string = "";
+        while (num > 0) {
+            string += num;
+            num--;
+        }
+        return string;
+    }
+
+    //do while
+
+
+    //forEach
+
 // ----
 // Objects / Dictionaries
 // declare object

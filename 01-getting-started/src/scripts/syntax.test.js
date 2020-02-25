@@ -77,4 +77,12 @@ test('Test to ensure countLetters is accurate.', () => {
 test('Make sure we can return the objects red value.', () => {
     expect(syntaxes.findRedValue({"red": 255, "green": 125, "blue": 10})).toBe(255);
     expect(syntaxes.findRedValue({"red": 10, "green": 0, "blue": 0})).toBe(10);
+    expect(syntaxes.findRedValue({r: 5, g: 200, b: 100})).toBe(undefined);
+});
+
+test('While Loop for numbers to string.', () => {
+    expect(syntaxes.numsToString(5)).toBe("54321");
+    expect(syntaxes.numsToString(10)).toBe("10987654321");
+    expect(syntaxes.numsToString(0)).toBe("");
+    expect(syntaxes.numsToString(-5)).toBe("");
 });
