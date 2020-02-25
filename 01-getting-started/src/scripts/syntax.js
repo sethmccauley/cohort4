@@ -115,7 +115,15 @@ const syntaxes = {
         return letterCount;
     },
 
+    findRedValue: (obj) => {
+        let redValue = 0;
+        for (const key in obj) {
+            if (key == "red") redValue = obj[key];
+        }
+        return redValue;
+    },
 
+    
 // ----
 // Objects / Dictionaries
 // declare object

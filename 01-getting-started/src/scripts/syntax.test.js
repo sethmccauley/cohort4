@@ -73,3 +73,8 @@ test('Test to ensure countLetters is accurate.', () => {
     expect(syntaxes.countLetters("World")).toBe(5);
     expect(syntaxes.countLetters("supercalafragilisticexpialadocious")).not.toBe(5);
 });
+
+test('Make sure we can return the objects red value.', () => {
+    expect(syntaxes.findRedValue({"red": 255, "green": 125, "blue": 10})).toBe(255);
+    expect(syntaxes.findRedValue({"red": 10, "green": 0, "blue": 0})).toBe(10);
+});
