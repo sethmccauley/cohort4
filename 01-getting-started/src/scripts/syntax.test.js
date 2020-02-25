@@ -100,3 +100,7 @@ test('Reduce the numeric values in the array by 1.', () => {
     expect(syntaxes.decrementArrayValues([3,2,1])).toEqual([2,1,0]);
     expect(syntaxes.decrementArrayValues([-1])).toEqual([-2]);
 });
+
+test('Testing the get empty yet constructed player method.', () => {
+    expect(syntaxes.getEmptyPlayer()).toBe({Name: "", Level: 0, Class: ""});
+});

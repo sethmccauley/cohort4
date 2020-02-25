@@ -158,6 +158,9 @@ const syntaxes = {
 // lookup key to retrieve value
 // -----
 
+    getEmptyPlayer: () => {
+        return {};
+    }
 
 }
 export default syntaxes
