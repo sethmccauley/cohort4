@@ -84,7 +84,7 @@ const syntaxes = {
 // update values
 // -----
 
-    insertAtStart(value, array) {
+    insertAtStart: (value, array) => {
         let returnArray = [value];
         array.forEach(element => {
             returnArray.push(element);
@@ -92,7 +92,7 @@ const syntaxes = {
         return returnArray;
     },
 
-    addToEnd(value, array) {
+    addToEnd: (value, array) => {
         let returnArray = array.map(el => el);
         returnArray.push(value);
         return returnArray;
@@ -107,10 +107,21 @@ const syntaxes = {
 // forEach (with array and function)
 // -----
 
+    countLetters: (string) => {
+        let letterCount = 0
+        for(let i = 0; i < string.length; i++) {
+            letterCount += 1;
+        }
+        return letterCount;
+    },
+
+
 // ----
 // Objects / Dictionaries
 // declare object
 // lookup key to retrieve value
 // -----
+
+
 }
 export default syntaxes

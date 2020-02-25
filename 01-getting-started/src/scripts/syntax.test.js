@@ -67,3 +67,9 @@ test('Test for adding a value to the end of an array.', () => {
     expect(syntaxes.addToEnd("Last", ["First"])).toEqual(["First", "Last"]);
     expect(syntaxes.addToEnd("One", ["Two"])).not.toEqual(["One", "Two"]);
 });
+
+test('Test to ensure countLetters is accurate.', () => {
+    expect(syntaxes.countLetters("Hello")).toBe(5);
+    expect(syntaxes.countLetters("World")).toBe(5);
+    expect(syntaxes.countLetters("supercalafragilisticexpialadocious")).not.toBe(5);
+});
