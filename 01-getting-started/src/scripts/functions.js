@@ -41,6 +41,10 @@ const functions = {
                 return "Answer";
         };
     },
+
+    calculateTax: (num) => {
+        return 0;
+    },
 };
 
 export default functions;

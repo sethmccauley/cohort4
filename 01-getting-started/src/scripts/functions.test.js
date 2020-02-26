@@ -32,3 +32,7 @@ test('Testing Calculator Operations.', () => {
     expect(functions.calculate(50,.5,"/")).toBe(100);
     expect(functions.calculate(0,0,"+")).toBe(0);
 });
+
+test('Testing tax calculations', () => {
+    expect(functions.calculateTax(48535)).toBe(7280)
+});
