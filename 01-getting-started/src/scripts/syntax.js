@@ -158,9 +158,13 @@ const syntaxes = {
 // lookup key to retrieve value
 // -----
 
-    getEmptyPlayer: () => {
-        return {};
-    }
+    getEmptyPlayer: (job) => {
+        return {Name: "", Level: 0, Class: job};
+    },
+
+    getProperty: (key, obj) => {
+        return obj[key];
+    },
 
 }
 export default syntaxes

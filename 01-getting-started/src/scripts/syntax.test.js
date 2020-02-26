@@ -102,5 +102,14 @@ test('Reduce the numeric values in the array by 1.', () => {
 });
 
 test('Testing the get empty yet constructed player method.', () => {
-    expect(syntaxes.getEmptyPlayer()).toBe({Name: "", Level: 0, Class: ""});
+    expect(syntaxes.getEmptyPlayer("wizard")).toEqual({Name: "", Level: 0, Class: "wizard"});
+    expect(syntaxes.getEmptyPlayer("fighter")).toEqual({Name: "", Level: 0, Class: "fighter"});
+    expect(syntaxes.getEmptyPlayer("healer")).toEqual({Name: "", Level: 0, Class: "healer"});
+});
+
+test('Retrieving value of element at key x.', () => {
+    expect(syntaxes.getProperty("Level", {Name: "", Level: 0, Class: "wizard"})).toBe(0);
+    expect(syntaxes.getProperty("Name", {Name: "", Level: 0, Class: "fighter"})).toBe("");
+    expect(syntaxes.getProperty("Class", {Name: "", Level: 0, Class: "fighter"})).toBe("fighter");
+    expect(syntaxes.getProperty("Faction", {Name: "", Level: 0, Class: "fighter"})).toBe(undefined);
 });
