@@ -21,4 +21,9 @@ test('Testing even-ness', () => {
     expect(functions.isEven(1)).toBe(false);
     expect(functions.isEven(0)).toBe(true);
     expect(functions.isEven(10.5)).toBe(false);
-})
+});
+
+test('Testing Calculator Operations.', () => {
+    expect(functions.calculate(1,2,"+")).toBe(3);
+    expect(functions.calculate(1,2,"*")).toBe(2);
+});

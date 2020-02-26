@@ -42,7 +42,7 @@ const syntaxes = {
     },
 
     isUndefined: (value) => {
-        if (typeof value == 'undefined') return true;
+        if (typeof(value) == 'undefined') return true;
         return false
     },
 

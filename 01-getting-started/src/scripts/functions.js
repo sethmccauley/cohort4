@@ -19,7 +19,28 @@ const functions = {
     isEven: (num) => {
         if (num%2 == 0) return true;
         return false;
-    }
+    },
+
+    printToLog: (...e) => {
+        console.log(e)
+    },
+
+    calculate: (num1, num2, operation) => {
+        switch(operation) {
+            case "+":
+                break;
+            case "-":
+                break;
+            case "/":
+                break;
+            case "*":
+                break;
+            default:
+                return undefined;
+                break;
+        }
+        return undefined;
+    },
 };
 
 export default functions;
