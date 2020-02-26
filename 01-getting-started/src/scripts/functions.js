@@ -26,7 +26,8 @@ const functions = {
     },
 
     calculate: (num1, num2, operation) => {
-        if (num1 == undefined || num2 == undefined || operation == undefined) return "Answer";
+        let haltables = ["", null, undefined, NaN];
+        if (haltables.includes(num1) || haltables.includes(num2)) return "Answer";
         switch(operation) {
             case "+":
                 return num1 + num2;
@@ -37,9 +38,8 @@ const functions = {
             case "*":
                 return num1 * num2;
             default:
-                return null;
+                return "Answer";
         };
-        return "Answer";
     },
 };
 

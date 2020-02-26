@@ -50,7 +50,7 @@ const syntaxes = {
 // sample if / else
 // -----
 
-    // In Poker, when should I hit or stand?
+    // In Blackjack, when should I hit or stand?
     hitOrStand: (value) => {
         if(value < 17){
             return "Hit";
