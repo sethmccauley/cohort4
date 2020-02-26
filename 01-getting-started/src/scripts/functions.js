@@ -26,20 +26,25 @@ const functions = {
     },
 
     calculate: (num1, num2, operation) => {
+        if (num1 == undefined || num2 == undefined || operation == undefined) return "Answer";
         switch(operation) {
             case "+":
+                return num1 + num2;
                 break;
             case "-":
+                return num1 - num2;
                 break;
             case "/":
+                return num1 / num2;
                 break;
             case "*":
+                return num1 * num2;
                 break;
             default:
-                return undefined;
+                return null;
                 break;
-        }
-        return undefined;
+        };
+        return "Answer";
     },
 };
 

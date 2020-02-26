@@ -9,10 +9,12 @@ idNumber.addEventListener('change', (() => {
     idNumberSize.textContent = functions.size(idNumber.value);
 }));
 
-// Listener for calculator buttons
-
+// Listeners for calculator buttons
 document.querySelectorAll('#calculatorTable button').forEach( (e) => {
     e.addEventListener('click', () => {
-        calculatorResult.textContent = functions.printToLog(e);
+        let num1 = parseFloat(num1Calc.value, 10);
+        let num2 = parseFloat(num2Calc.value, 10);
+        let operation = e.innerHTML;
+        calculatorResult.textContent = functions.calculate(num1, num2, operation);
     });
 });

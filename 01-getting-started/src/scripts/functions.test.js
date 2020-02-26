@@ -25,5 +25,10 @@ test('Testing even-ness', () => {
 
 test('Testing Calculator Operations.', () => {
     expect(functions.calculate(1,2,"+")).toBe(3);
+    expect(functions.calculate(20,20,"-")).toBe(0);
     expect(functions.calculate(1,2,"*")).toBe(2);
+    expect(functions.calculate(5,5,"*")).toBe(25);
+    expect(functions.calculate(5,0,"/")).toBe(Infinity);
+    expect(functions.calculate(50,.5,"/")).toBe(100);
+    expect(functions.calculate(0,0,"+")).toBe(0);
 });
