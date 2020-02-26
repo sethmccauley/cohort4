@@ -112,4 +112,5 @@ test('Retrieving value of element at key x.', () => {
     expect(syntaxes.getProperty("Name", {Name: "", Level: 0, Class: "fighter"})).toBe("");
     expect(syntaxes.getProperty("Class", {Name: "", Level: 0, Class: "fighter"})).toBe("fighter");
     expect(syntaxes.getProperty("Faction", {Name: "", Level: 0, Class: "fighter"})).toBe(undefined);
+    expect(syntaxes.getProperty("HomePoint", {})).toBe(undefined);
 });
