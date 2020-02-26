@@ -30,19 +30,14 @@ const functions = {
         switch(operation) {
             case "+":
                 return num1 + num2;
-                break;
             case "-":
                 return num1 - num2;
-                break;
             case "/":
                 return num1 / num2;
-                break;
             case "*":
                 return num1 * num2;
-                break;
             default:
                 return null;
-                break;
         };
         return "Answer";
     },
