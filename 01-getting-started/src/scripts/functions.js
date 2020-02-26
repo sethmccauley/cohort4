@@ -43,7 +43,11 @@ const functions = {
     },
 
     calculateTax: (num) => {
-        return 0;
+        let totalTax = 0;
+        if(num <= 48535) {
+            totalTax += num*.15;
+        }
+        return totalTax;
     },
 };
 

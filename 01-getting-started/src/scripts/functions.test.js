@@ -34,5 +34,6 @@ test('Testing Calculator Operations.', () => {
 });
 
 test('Testing tax calculations', () => {
-    expect(functions.calculateTax(48535)).toBe(7280)
+    expect(functions.calculateTax(48535)).toBe(7280.25);
+    expect(functions.calculateTax(2)).toBe(.3);
 });
