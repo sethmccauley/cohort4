@@ -42,12 +42,26 @@ const functions = {
         };
     },
 
-    calculateTax: (num) => {
+    calculateTax: (income) => {
         let totalTax = 0;
-        if(num <= 48535) {
-            totalTax += num*.15;
-        }
-        return totalTax;
+        let taxInformation = [
+            {bracket: 48535, rate: .15, max: 7280},
+            {bracket: 48534, rate: .205, max: 9950},
+            {bracket: 53404, rate: .26, max: 13885},
+            {bracket: 63895, rate: .29, max: 18530},
+            {bracket: Infinity, rate: .33, max: 0}
+        ];
+        taxInformation.forEach((e) => {
+            if(income >= e["bracket"]) {
+                totalTax += e["max"];
+            } else {
+                if(income > 0) totalTax += income * e["rate"];
+            }
+            income -= e["bracket"];
+        })
+        //Fix Truncation to two decimal places
+        totalTax = totalTax.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
+        return parseFloat(totalTax, 10);
     },
 };
 
