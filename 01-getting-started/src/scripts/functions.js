@@ -63,6 +63,10 @@ const functions = {
         totalTax = totalTax.toString().match(/^\d+(?:\.\d{0,2})?/)[0];
         return parseFloat(totalTax, 10);
     },
+
+    arrayToString: (array) => {
+        return array.toString();
+    },
 };
 
 export default functions;

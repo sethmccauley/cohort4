@@ -22,3 +22,52 @@ document.querySelectorAll('#calculatorTable button').forEach( (e) => {
 numToCalcTaxes.addEventListener('keyup', () => {
     calcTaxResult.textContent = "$" + functions.calculateTax(parseFloat(numToCalcTaxes.value)) + " of federal income tax."
 });
+
+// Local variable for array storage and dictionary lookups
+let arrayRepresentation = [];
+const provincialCodes = {
+    ab: "Alberta",
+    bc: "British Columbia",
+    sk: "Saskatchewan",
+    mb: "Manitoba",
+    nb: "New Brunswick",
+    nl: "Newfoundland and Labrador",
+    ns: "Nova Scotia",
+    nt: "Northwest Territories",
+    nu: "Nunavut",
+    on: "Ontario",
+    pe: "Prince Edward Island",
+    qc: "Quebec",
+    yt: "Yukon",
+}
+
+// Listeners for array manipulator buttons
+addToArray.addEventListener('click', () => {
+    let validation = parseInt(document.getElementById('arrayInput').value)
+    if (isNaN(validation)) {
+        document.getElementById('arrayDisplay').innerHTML = "Input is not a valid number.";
+        return undefined;
+    } else {
+        arrayRepresentation.push(validation)
+        document.getElementById('arrayDisplay').innerHTML = validation + " added to Array.";
+    };
+});
+
+showArray.addEventListener('click', () => {
+    document.getElementById('arrayDisplay').innerHTML = arrayRepresentation.toString(); 
+    return undefined;
+});
+
+showTotal.addEventListener('click', () => {
+    document.getElementById('arrayDisplay').innerHTML = "Total: " + arrayRepresentation.reduce((a, b) => a + b, 0); 
+    return undefined;
+});
+
+clearArray.addEventListener('click', () => {
+    document.getElementById('arrayDisplay').innerHTML = "Array cleared.";
+    arrayRepresentation = [];
+});
+
+provinceCodeLookup.addEventListener('click', () => {
+    document.getElementById('dictionaryLookupText').innerHTML = provincialCodes[document.getElementById('dictionaryLookup').value.toLowerCase()];
+});

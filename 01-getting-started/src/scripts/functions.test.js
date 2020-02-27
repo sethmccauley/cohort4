@@ -43,3 +43,7 @@ test('Testing tax calculations', () => {
     expect(functions.calculateTax(214368)).toBe(49645);
     expect(functions.calculateTax(250000)).toBe(61403.56);
 });
+
+test('Can I return a string from an array', () => {
+    expect(functions.arrayToString([1,2,3,4,5])).toBe("1,2,3,4,5");
+});
