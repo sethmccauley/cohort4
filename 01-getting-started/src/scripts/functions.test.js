@@ -38,4 +38,8 @@ test('Testing tax calculations', () => {
     expect(functions.calculateTax(2)).toBe(.3);
     expect(functions.calculateTax(48536)).toBe(7280.2);
     expect(functions.calculateTax(97069)).toBe(17230);
+    expect(functions.calculateTax(-50000)).toBe(0);
+    expect(functions.calculateTax(150473)).toBe(31115);
+    expect(functions.calculateTax(214368)).toBe(49645);
+    expect(functions.calculateTax(250000)).toBe(61403.56);
 });

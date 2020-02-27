@@ -18,3 +18,7 @@ document.querySelectorAll('#calculatorTable button').forEach( (e) => {
         calculatorResult.textContent = functions.calculate(num1, num2, operation);
     });
 });
+
+numToCalcTaxes.addEventListener('keyup', () => {
+    calcTaxResult.textContent = "$" + functions.calculateTax(parseFloat(numToCalcTaxes.value)) + " of federal income tax."
+});

@@ -60,7 +60,7 @@ const functions = {
             income -= e["bracket"];
         })
         //Fix Truncation to two decimal places
-        totalTax = totalTax.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
+        totalTax = totalTax.toString().match(/^\d+(?:\.\d{0,2})?/)[0];
         return parseFloat(totalTax, 10);
     },
 };
