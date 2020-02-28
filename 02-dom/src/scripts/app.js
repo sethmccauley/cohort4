@@ -15,7 +15,7 @@ showButton.addEventListener('click', () => {
 addButton.addEventListener('click', () => {
     let ol = document.getElementById('orderedList');
     let li = document.createElement('li')
-    li.textContent = "Item " + functions.countChildren(ol);
+    li.textContent = "Item " + (ol.children.length + 1);
     ol.appendChild(li);
 });
 
