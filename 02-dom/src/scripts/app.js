@@ -13,7 +13,7 @@ showButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
-    ol = document.getElementById('orderedList');
-    li = document.createElement('li')
+    let ol = document.getElementById('orderedList');
+    let li = document.createElement('li')
     ol.appendChild(li);
 })
