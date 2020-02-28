@@ -23,7 +23,7 @@
 
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
+        <div class="w3-bar w3-dark-grey" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
@@ -32,6 +32,8 @@
             <a href="#idSize" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> SIZE</a>
             <a href="#idCalculator" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calculator"></i>CALCULATOR</a>
             <a href="#idCanadianTaxes" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-money"></i>TAXES</a>
+            <a href="#idArrayManipulation" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-cubes"></i>ARRAYS</a>
+            <a href="#idDictionaryLookup" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-database"></i>DICTIONARIES</a>
             <a href="https://www.evolveu.ca" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa fa-envelope"></i> CONTACT</a>
             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
                 <i class="fa fa-search"></i>
@@ -39,9 +41,13 @@
         </div>
 
         <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <div id="navDemo" class="w3-bar-block w3-dark-grey w3-hide w3-hide-large w3-hide-medium">
             <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
             <a href="#idSize" class="w3-bar-item w3-button" onclick="toggleFunction()">SIZE</a>
+            <a href="#idCalculator" class="w3-bar-item w3-button" onclick="toggleFunction()">CALCULATOR</a>
+            <a href="#idCanadianTaxes" class="w3-bar-item w3-button" onclick="toggleFunction()">TAXES</a>
+            <a href="#idArrayManipulation" class="w3-bar-item w3-button" onclick="toggleFunction()">ARRAYS</a>
+            <a href="#idDictionaryLookup" class="w3-bar-item w3-button" onclick="toggleFunction()">DICTIONARIES</a>
             <a href="https://www.evolveu.ca" class="w3-bar-item w3-button" onclick="toggleFunction()" target="_blank">CONTACT</a>
             <a href="#" class="w3-bar-item w3-button">SEARCH</a>
         </div>
@@ -205,9 +211,9 @@
         function myFunction() {
             var navbar = document.getElementById("myNavbar");
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-dark-grey";
             } else {
-                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-dark-grey", "");
             }
         }
 
