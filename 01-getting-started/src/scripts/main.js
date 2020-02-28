@@ -46,11 +46,11 @@ addToArray.addEventListener('click', () => {
     let validation = parseInt(document.getElementById('arrayInput').value)
     if (isNaN(validation)) {
         document.getElementById('arrayDisplay').innerHTML = "Input is not a valid number.";
-        return undefined;
     } else {
         arrayRepresentation.push(validation)
         document.getElementById('arrayDisplay').innerHTML = validation + " added to Array.";
     };
+    return undefined;
 });
 
 showArray.addEventListener('click', () => {
@@ -66,8 +66,10 @@ showTotal.addEventListener('click', () => {
 clearArray.addEventListener('click', () => {
     document.getElementById('arrayDisplay').innerHTML = "Array cleared.";
     arrayRepresentation = [];
+    return undefined;
 });
 
 provinceCodeLookup.addEventListener('click', () => {
     document.getElementById('dictionaryLookupText').innerHTML = provincialCodes[document.getElementById('dictionaryLookup').value.toLowerCase()];
+    return undefined;
 });
