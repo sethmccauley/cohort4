@@ -20,7 +20,8 @@ document.querySelectorAll('#calculatorTable button').forEach( (e) => {
 });
 
 numToCalcTaxes.addEventListener('keyup', () => {
-    calcTaxResult.textContent = "$" + functions.calculateTax(parseFloat(numToCalcTaxes.value)) + " of federal income tax."
+    calcTaxResult.textContent = "$" + functions.calculateTax(parseFloat(numToCalcTaxes.value)) + " of federal income tax.";
+    return undefined;
 });
 
 // Local variable for array storage and dictionary lookups
@@ -50,26 +51,21 @@ addToArray.addEventListener('click', () => {
         arrayRepresentation.push(validation)
         document.getElementById('arrayDisplay').innerHTML = validation + " added to Array.";
     };
-    return undefined;
 });
 
 showArray.addEventListener('click', () => {
     document.getElementById('arrayDisplay').innerHTML = arrayRepresentation.toString(); 
-    return undefined;
 });
 
 showTotal.addEventListener('click', () => {
     document.getElementById('arrayDisplay').innerHTML = "Total: " + arrayRepresentation.reduce((a, b) => a + b, 0); 
-    return undefined;
 });
 
 clearArray.addEventListener('click', () => {
     document.getElementById('arrayDisplay').innerHTML = "Array cleared.";
     arrayRepresentation = [];
-    return undefined;
 });
 
 provinceCodeLookup.addEventListener('click', () => {
     document.getElementById('dictionaryLookupText').innerHTML = provincialCodes[document.getElementById('dictionaryLookup').value.toLowerCase()];
-    return undefined;
 });
