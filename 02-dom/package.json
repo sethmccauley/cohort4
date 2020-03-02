@@ -1,5 +1,5 @@
 {
-    "name": "jest-p2",
+    "name": "02-dom",
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
@@ -7,7 +7,7 @@
         "test": "jest",
         "testcov": "jest --coverage",
         "test1": "jest src/02-dom",
-        "test1cov": "jest ssrc/02-dom --coverage",
+        "test1cov": "jest src/02-dom --coverage",
         "testfile": "jest src/02-dom/scripts/lfsplay.test.js"
     },
     "keywords": [],
