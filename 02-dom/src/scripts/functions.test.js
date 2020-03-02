@@ -9,7 +9,10 @@ test('Append list item to ordered list.', () => {
         </ol>
     `;
 
+    const ol = document.getElementById('orderedList')
     expect(functions.appendItem("orderedList","Item 4")).toBe(true);
+    expect(ol.children.length).toBe(4);
+    expect(ol.children[ol.children.length -1].innerHTML).toBe('Item 4');
 });
 
 test('Insert item before all other items in list.', () => {
@@ -21,7 +24,10 @@ test('Insert item before all other items in list.', () => {
         </ol>
     `;
 
-    expect(functions.appendItem("orderedList","First")).toBe(true);
+    const ol = document.getElementById('orderedList')
+    expect(functions.addBefore("orderedList","First")).toBe(true);
+    expect(ol.children.length).toBe(4);
+    expect(ol.children[0].innerHTML).toBe('First');
 });
 
 test('Checking that I delete the last item in ol.', () => {
@@ -33,6 +39,8 @@ test('Checking that I delete the last item in ol.', () => {
         </ol>
     `;
 
+    const ol = document.getElementById('orderedList')
     expect(functions.deleteLast('orderedList')).toBe(true);
-    expect(document.getElementById('orderedList').children.length).toBe(2);
+    expect(ol.children.length).toBe(2);
+    expect(ol.children[ol.children.length -1].innerHTML).toBe('Item 2');
 });
