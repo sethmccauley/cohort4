@@ -13,20 +13,13 @@ showButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
-    let ol = document.getElementById('orderedList');
-    let li = document.createElement('li')
-    li.textContent = "Item " + (ol.children.length + 1);
-    ol.appendChild(li);
+    functions.appendItem("orderedList");
 });
 
 addStartButton.addEventListener('click', () => {
-    let ol = document.getElementById('orderedList');
-    let li = document.createElement('li');
-    ol.insertBefore(li, ol.getElementsByTagName('li')[0]);
+    functions.addBefore('orderedList');
 });
 
 deleteButton.addEventListener('click', () => {
-    let ol = document.getElementById('orderedList');
-    let lis = ol.getElementsByTagName('li');
-    ol.removeChild(lis[lis.length -1]);
+    functions.deleteLast('orderedList');
 });
