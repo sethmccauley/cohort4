@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>Working with cards.
+    </header>
+    <div id="leftPanel" class="leftPanel">
+        <div id="controlPanel" class="controlPanel">
+            <button id="addCard" class="w3-button w3-small w3-teal w3-hover-cyan">Add Card</button><br>
+        </div>
+    </div>
+    <div id="rightPanel" class="rightPanel" style="border: 1px solid black">
+
+    </div>
+    <script language="Javascript" type="text/javascript" src="scripts/page2.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        window.addEventListener('DOMContentLoaded', (e) => {
+            const addElement = document.getElementById('addCard')
+            new CardManager(addElement)
+        });
+    </script>
+</body>
+</html>

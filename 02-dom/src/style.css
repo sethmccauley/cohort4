@@ -3,3 +3,63 @@ html, body {
     background-color: #C0C0C0;
     font-family: 'Oswald';
 }
+
+header {
+    padding: 10px;
+    margin: 10 0 10 25px;
+    font-family: 'Oswald';
+    font-size: 3em;
+}
+
+.leftPanel {
+    float: left;
+    overflow: scroll;
+    height:85vh; 
+    width: 30vw;
+    margin-right: 10px;
+}
+
+.controlPanel {
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.rightPanel {
+    overflow: auto;
+    width: 60vw;
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 25px;
+}
+
+.rightCard {
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border: 1px dashed grey;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+.controlCard {
+    text-align: center;
+    width: 96%;
+    height: 90px;
+    margin: 5px;
+    background-color: #F0F0F0;
+}
+.controlCard button {
+    margin: 2px;
+}
+
+.controlCard h2 {
+    padding: 0px;
+    margin: -1px;
+}
+
+.controlCard span {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1.5em;
+}

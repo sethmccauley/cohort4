@@ -15,7 +15,7 @@ test('Append list item to ordered list.', () => {
     expect(ol.children[ol.children.length -1].innerHTML).toBe('Item 4');
 });
 
-test('Insert item before all other items in list.', () => {
+test('Insert item before all other items in ordered list.', () => {
     document.body.innerHTML = `
         <ol id="orderedList">
             <li>Item 1</li>
@@ -30,7 +30,7 @@ test('Insert item before all other items in list.', () => {
     expect(ol.children[0].innerHTML).toBe('First');
 });
 
-test('Checking that I delete the last item in ol.', () => {
+test('Checking that I delete the last item in ordered list.', () => {
     document.body.innerHTML = `
         <ol id="orderedList">
             <li>Item 1</li>
