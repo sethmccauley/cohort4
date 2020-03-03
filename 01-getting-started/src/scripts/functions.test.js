@@ -16,6 +16,10 @@ test('Does that add function work?', () => {
     expect(functions.add(101,202)).toBe(303);
 });
 
+test('Does the subtraction function work?', () => {
+    expect(functions.subtract(1,1)).toBe(0);
+});
+
 test('Testing even-ness', () => {
     expect(functions.isEven(2)).toBe(true);
     expect(functions.isEven(1)).toBe(false);
@@ -31,6 +35,7 @@ test('Testing Calculator Operations.', () => {
     expect(functions.calculate(5,0,"/")).toBe(Infinity);
     expect(functions.calculate(50,.5,"/")).toBe(100);
     expect(functions.calculate(0,0,"+")).toBe(0);
+    expect(functions.calculate(0,0,"Y")).toBe("Answer");
 });
 
 test('Testing tax calculations', () => {
