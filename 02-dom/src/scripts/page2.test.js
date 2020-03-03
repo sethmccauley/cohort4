@@ -22,8 +22,7 @@ test('Test method call.', () => {
 
     const mockCardManager = CardManager.mock.instances[0];
     const mockCardCreation = mockCardManager.addCard;
-    
+
     expect(mockCardCreation.mock.calls[0][0]).toEqual(undefined);
     expect(mockCardCreation).toHaveBeenCalledTimes(1);
-
 });
