@@ -1,4 +1,4 @@
-class CardManager{
+export default class CardManager{
     constructor(addElement){
         this.id = 1;
         addElement.addEventListener('click', this.addCard.bind(this));
