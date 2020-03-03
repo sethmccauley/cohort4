@@ -21,7 +21,6 @@ document.querySelectorAll('#calculatorTable button').forEach( (e) => {
 
 numToCalcTaxes.addEventListener('keyup', () => {
     calcTaxResult.textContent = "$" + functions.calculateTax(parseFloat(numToCalcTaxes.value)) + " of federal income tax.";
-    return undefined;
 });
 
 // Local variable for array storage and dictionary lookups
