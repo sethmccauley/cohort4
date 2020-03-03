@@ -20,8 +20,8 @@ const functions = {
 
     deleteLast: (listId) => {
         let ol = document.getElementById(listId);
-        let lis = ol.getElementsByTagName('li');
         if (ol == null) return undefined;
+        let lis = ol.getElementsByTagName('li');
         ol.removeChild(lis[lis.length -1]);
         return true;
     },

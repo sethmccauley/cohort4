@@ -13,6 +13,7 @@ test('Append list item to ordered list.', () => {
     expect(functions.appendItem("orderedList","Item 4")).toBe(true);
     expect(ol.children.length).toBe(4);
     expect(ol.children[ol.children.length -1].innerHTML).toBe('Item 4');
+    expect(functions.appendItem(null, "Nope")).toBe(undefined);
 });
 
 test('Insert item before all other items in ordered list.', () => {
@@ -26,6 +27,7 @@ test('Insert item before all other items in ordered list.', () => {
 
     const ol = document.getElementById('orderedList')
     expect(functions.addBefore("orderedList","First")).toBe(true);
+    expect(functions.addBefore(null, "Nope")).toBe(undefined);
     expect(ol.children.length).toBe(4);
     expect(ol.children[0].innerHTML).toBe('First');
 });
@@ -41,6 +43,7 @@ test('Checking that I delete the last item in ordered list.', () => {
 
     const ol = document.getElementById('orderedList')
     expect(functions.deleteLast('orderedList')).toBe(true);
+    expect(functions.deleteLast(null)).toBe(undefined);
     expect(ol.children.length).toBe(2);
     expect(ol.children[ol.children.length -1].innerHTML).toBe('Item 2');
 });

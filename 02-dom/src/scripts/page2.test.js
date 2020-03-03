@@ -7,7 +7,13 @@ beforeEach(() => {
 });
 
 test('Testing a constructor...', () => {
-    const cardmanager = new CardManager(1);
+    document.body.innerHTML = `
+        <button id="addCard">Add Card</button>
+    `;
+
+    const buttonElement = document.getElementById('addCard');
+    const cardManager = new CardManager(buttonElement);
+
     expect(CardManager).toHaveBeenCalledTimes(1);
 });
 
