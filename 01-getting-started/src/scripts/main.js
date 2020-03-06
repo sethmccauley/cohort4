@@ -45,26 +45,26 @@ const provincialCodes = {
 addToArray.addEventListener('click', () => {
     let validation = parseInt(document.getElementById('arrayInput').value)
     if (isNaN(validation)) {
-        document.getElementById('arrayDisplay').innerHTML = "Input is not a valid number.";
+        document.getElementById('arrayDisplay').textContent = "Input is not a valid number.";
     } else {
         arrayRepresentation.push(validation)
-        document.getElementById('arrayDisplay').innerHTML = validation + " added to Array.";
+        document.getElementById('arrayDisplay').textContent = validation + " added to Array.";
     };
 });
 
 showArray.addEventListener('click', () => {
-    document.getElementById('arrayDisplay').innerHTML = arrayRepresentation.toString(); 
+    document.getElementById('arrayDisplay').textContent = arrayRepresentation.toString(); 
 });
 
 showTotal.addEventListener('click', () => {
-    document.getElementById('arrayDisplay').innerHTML = "Total: " + arrayRepresentation.reduce((a, b) => a + b, 0); 
+    document.getElementById('arrayDisplay').textContent = "Total: " + arrayRepresentation.reduce((a, b) => a + b, 0); 
 });
 
 clearArray.addEventListener('click', () => {
-    document.getElementById('arrayDisplay').innerHTML = "Array cleared.";
+    document.getElementById('arrayDisplay').textContent = "Array cleared.";
     arrayRepresentation = [];
 });
 
 provinceCodeLookup.addEventListener('click', () => {
-    document.getElementById('dictionaryLookupText').innerHTML = provincialCodes[document.getElementById('dictionaryLookup').value.toLowerCase()];
+    document.getElementById('dictionaryLookupText').textContent = provincialCodes[document.getElementById('dictionaryLookup').value.toLowerCase()];
 });
