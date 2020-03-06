@@ -1,10 +1,4 @@
 import CardManager from './page2.js';
-//jest.mock('./page2.js'); // CardManager is now a mock constructor
-
-// beforeEach(() => {
-//     // Clear all instances and calls to constructor and all methods:
-//     CardManager.mockClear();
-// });
 
 test('Testing a constructor...', () => {
     document.body.innerHTML = `
@@ -14,7 +8,7 @@ test('Testing a constructor...', () => {
     const buttonElement = document.getElementById('addCard');
     const cardManager = new CardManager(buttonElement);
 
-    expect(CardManager).toHaveBeenCalledTimes(1);
+    expect(cardManager).toEqual(new CardManager(buttonElement));
 });
 
 test('Test method call.', () => {
@@ -25,19 +19,30 @@ test('Test method call.', () => {
             </div>
         </div>
     `;
-    // expect(cardManager).not.toHaveBeenCalled();
-    // expect(cardManager).toEqual();
 
     const buttonElement = document.getElementById('addCard');
     const cardManager = new CardManager(buttonElement);
 
     // Run call to addCard
-    const newDiv = cardManager.createCard(1);
-    console.log(newDiv)
+    buttonElement.click();
 
-    // const mockCardManager = CardManager.mock.instances[0];
-    // const mockAddCard = mockCardManager.addCard;
-    console.log(document.body.innerHTML);
+    // Test for Card 1 present.
+    expect(document.body.innerHTML).toContain("Card 1");
 
-    // expect(mockAddCard.mock.calls[0][0]).toHaveBeenCalledWith(buttonElement);
+    // Retrieve and invoke the deletion method.
+    const newDelete = document.querySelector('.controlCard button:last-of-type');
+    newDelete.click();
+
+    // Ensure card 1 is not present.
+    expect(document.body.innerHTML).not.toContain("Card 1");
+
+    // Generate new Card
+    buttonElement.click();
+
+    // Select add before button and add before
+    const newAddBefore = document.querySelector('.controlCard button:first-of-type');
+    newAddBefore.click()
+
+    // Test for Card 3
+    expect(document.body.innerHTML).toContain("Card 3");
 });

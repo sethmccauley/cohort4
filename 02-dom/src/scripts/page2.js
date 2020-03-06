@@ -26,7 +26,7 @@ export default class CardManager{
 
         // Create Title
         const span = document.createElement('span');
-        span.innerHTML = `Card ${id}`;
+        span.textContent = `Card ${id}`;
         const br = document.createElement('br');
 
         newDiv.insertAdjacentElement( 'beforeend', span );
@@ -36,20 +36,20 @@ export default class CardManager{
         const addBeforeBtn = document.createElement('button');
         addBeforeBtn.addEventListener('click', this.addBefore.bind(this));
         addBeforeBtn.setAttribute('class', 'w3-button w3-tiny w3-green');
-        addBeforeBtn.innerHTML = "Add Before";
+        addBeforeBtn.textContent = "Add Before";
 
         newDiv.insertAdjacentElement('beforeend', addBeforeBtn);
 
         const addAfterBtn = document.createElement('button');
         addAfterBtn.setAttribute('class', 'w3-button w3-tiny w3-green');
-        addAfterBtn.innerHTML = "Add After";
+        addAfterBtn.textContent = "Add After";
         addAfterBtn.addEventListener('click', this.addAfter.bind(this));
 
         newDiv.insertAdjacentElement('beforeend', addAfterBtn);
 
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'w3-button w3-tiny w3-green');
-        deleteBtn.innerHTML = "Delete";
+        deleteBtn.textContent = "Delete";
         deleteBtn.addEventListener('click', this.deleteElement.bind(this));
 
         newDiv.insertAdjacentElement('beforeend', deleteBtn);
