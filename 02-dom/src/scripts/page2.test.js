@@ -1,10 +1,10 @@
 import CardManager from './page2.js';
-jest.mock('./page2.js');
+//jest.mock('./page2.js'); // CardManager is now a mock constructor
 
-beforeEach(() => {
-    // Clear all instances and calls to constructor and all methods:
-    CardManager.mockClear();
-});
+// beforeEach(() => {
+//     // Clear all instances and calls to constructor and all methods:
+//     CardManager.mockClear();
+// });
 
 test('Testing a constructor...', () => {
     document.body.innerHTML = `
@@ -18,17 +18,26 @@ test('Testing a constructor...', () => {
 });
 
 test('Test method call.', () => {
-    expect(CardManager).not.toHaveBeenCalled();
+    document.body.innerHTML = `
+        <div>
+            <div id="controlPanel">
+                <button id="addCard">Add Card</button>
+            </div>
+        </div>
+    `;
+    // expect(cardManager).not.toHaveBeenCalled();
+    // expect(cardManager).toEqual();
 
-    const cardmanager = new CardManager(1);
-    expect(CardManager).toHaveBeenCalledTimes(1);
+    const buttonElement = document.getElementById('addCard');
+    const cardManager = new CardManager(buttonElement);
 
     // Run call to addCard
-    cardmanager.addCard();
+    const newDiv = cardManager.createCard(1);
+    console.log(newDiv)
 
-    const mockCardManager = CardManager.mock.instances[0];
-    const mockCardCreation = mockCardManager.addCard;
+    // const mockCardManager = CardManager.mock.instances[0];
+    // const mockAddCard = mockCardManager.addCard;
+    console.log(document.body.innerHTML);
 
-    expect(mockCardCreation.mock.calls[0][0]).toEqual(undefined);
-    expect(mockCardCreation).toHaveBeenCalledTimes(1);
+    // expect(mockAddCard.mock.calls[0][0]).toHaveBeenCalledWith(buttonElement);
 });
