@@ -6,12 +6,10 @@ export default class Account{
 
     deposit(amount){
         this.totalBalance += amount;
-        return this.balance();
     }
 
     widthdrawl(amount){
         this.totalBalance -= amount;
-        return this.balance();
     }
 
     balance(){

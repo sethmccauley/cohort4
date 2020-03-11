@@ -76,3 +76,9 @@ html {
         min-height: 400px;
     }
 }
+
+div .account {
+    width: 350px;
+    max-width: 350px;
+    max-height: 350px;
+}
