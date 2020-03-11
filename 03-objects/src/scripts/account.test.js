@@ -1,4 +1,4 @@
-import Account from './account.js';
+import { Account, AccountController } from './account.js';
 
 test('Ensure the object is created with an initial balance.', () => {
     let checkingAccount = new Account('checkingAccount', 25);
