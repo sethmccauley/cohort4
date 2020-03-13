@@ -6,6 +6,8 @@ test('Ensure the object is created with an initial balance.', () => {
     expect(checkingAccount.balance()).toBe(25);
     expect(checkingAccount.deposit(10)).toBe();
     expect(checkingAccount.balance()).toBe(35);
-    expect(checkingAccount.widthdrawl(30)).toBe();
+    expect(checkingAccount.withdrawl(30)).toBe();
     expect(checkingAccount.balance()).toBe(5);
+    expect(checkingAccount.deposit(.99)).toBe();
+    expect(checkingAccount.balance()).toBe(5.99);
 });

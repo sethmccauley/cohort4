@@ -8,3 +8,6 @@ addAccount.addEventListener('click', (e) => {
     
     e.target.parentNode.insertAdjacentElement('afterend', new Account(accountName, initialBalance).createCard())
 });
+
+let newAccount = new Account('My Checking Account', 500);
+document.getElementById('accountController').appendChild(newAccount.createCard());
