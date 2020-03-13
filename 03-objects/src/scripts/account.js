@@ -17,8 +17,7 @@ export class Account{
     }
 
     displayPretty(){
-        let tempNum = this.totalBalance.toString().match(/^\d+(?:\.\d{0,2})?/)[0];
-        return parseFloat(tempNum, 10);
+        return "$" + this.totalBalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     createCard(){
@@ -88,7 +87,7 @@ export class Account{
         balanceDiv.appendChild(balanceCol);
         const balanceRest = document.createElement('div');
         balanceRest.setAttribute('class','w3-rest w3-padding-small');
-        balanceRest.textContent = this.balance();
+        balanceRest.textContent = this.displayPretty();
         balanceDiv.appendChild(balanceRest);
 
         newDiv.appendChild(balanceDiv);
@@ -96,31 +95,36 @@ export class Account{
         withdrawlButton.addEventListener('click', () => {
             if(withdrawlAmount.value == 0) return undefined;
             this.withdrawl(parseFloat(withdrawlAmount.value, 10));
-            balanceRest.textContent = this.balance();
+            withdrawlAmount.value = "";
+            depositAmount.value = "";
+            balanceRest.textContent = this.displayPretty();
         });
         depositButton.addEventListener('click', () => {
             if(depositAmount.value == 0) return undefined;
             this.deposit(parseFloat(depositAmount.value, 10));
-            balanceRest.textContent = this.balance();
+            withdrawlAmount.value = "";
+            depositAmount.value = "";
+            balanceRest.textContent = this.displayPretty();
         });
         return newDiv;
-    }
-
-    addCard(){
-        return this.createCard;
     }
 }
 
 export class AccountController{
-    constructor(account){
-
+    constructor(){
+        this.accountList = [];
     }
 
-    createCard(name, balance){
+    addAccount(account){
 
+        this.accountList.push(account);
     }
 
-    deleteCard(){
+    removeAccount(account){
+        
+    }
+
+    sortAccounts(){
 
     }
 }
