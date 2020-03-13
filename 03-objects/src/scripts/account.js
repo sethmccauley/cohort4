@@ -136,7 +136,12 @@ export class AccountController{
     }
 
     sortAccounts(){
-
-        return account
+        let largest = this.accountList[0];
+        this.accountList.forEach( value => {
+            if(value.totalBalance > largest.totalBalance) {
+                largest = value;
+            }
+        })
+        return largest
     }
 }

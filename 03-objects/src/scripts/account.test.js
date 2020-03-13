@@ -26,3 +26,25 @@ test('Check that the DOM is being manipulated', () => {
 
     expect(document.body.innerHTML).toContain('My Car Fund');
 })
+
+test('Test the collection of accounts is working.', () => {
+    const newCollection = new AccountController();
+    newCollection.addAccount(new Account('one',100));
+    newCollection.addAccount(new Account('two',200));
+
+    expect(newCollection.accountList.length).toBe(2);
+    newCollection.removeAccount('two');
+    expect(newCollection.accountList.length).toBe(1);
+});
+
+test('Sorting accounts for largest account.', () => {
+    const newCollection = new AccountController();
+    newCollection.addAccount(new Account('one',100));
+    newCollection.addAccount(new Account('two',200));
+    newCollection.addAccount(new Account('three',987654));
+    newCollection.addAccount(new Account('four',201));
+
+    expect(newCollection.sortAccounts().name).toBe('three');
+    newCollection.removeAccount('three');
+    expect(newCollection.sortAccounts().name).toBe('four');
+});
