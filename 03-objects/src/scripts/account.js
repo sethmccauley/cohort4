@@ -27,7 +27,7 @@ export class Account{
 
         // Title
         const h2 = document.createElement('h2');
-        h2.textContent = 'Account Name: ' + this.name;
+        h2.textContent = this.name;
         h2.setAttribute('class', 'w3-center');
         newDiv.appendChild(h2);
 
@@ -92,6 +92,18 @@ export class Account{
 
         newDiv.appendChild(balanceDiv);
 
+        // Delete
+        const balanceDelete = document.createElement('div');
+        balanceDelete.setAttribute('class', 'w3-row w3-section w3-light-grey w3-right');
+        const deleteButton = document.createElement('button');
+        deleteButton.setAttribute('class', 'w3-button w3-teal w3-small');
+        deleteButton.setAttribute('style', 'width: 200px');
+        deleteButton.textContent = "Delete Account";
+        balanceDelete.appendChild(deleteButton);
+        balanceDiv.appendChild(balanceDelete);
+        
+        newDiv.appendChild(balanceDelete)
+
         withdrawlButton.addEventListener('click', () => {
             if(withdrawlAmount.value == 0) return undefined;
             this.withdrawl(parseFloat(withdrawlAmount.value, 10));
@@ -116,15 +128,15 @@ export class AccountController{
     }
 
     addAccount(account){
-
         this.accountList.push(account);
     }
 
-    removeAccount(account){
-        
+    removeAccount(accountName){
+        this.accountList.splice(this.accountList.findIndex(value => value.name == accountName), 1);
     }
 
     sortAccounts(){
 
+        return account
     }
 }
