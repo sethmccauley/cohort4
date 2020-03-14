@@ -2,6 +2,9 @@ import { Account, AccountController } from './account.js';
 
 const accountManager = new AccountController();
 
+
+// Event Listeners
+
 addAccount.addEventListener('click', () => {
     // Test value is present
     if(document.getElementById('accountName').value == "") return alert('Account Name Required.');
@@ -26,6 +29,8 @@ accountController.addEventListener('click', (e) => {
     updateSummary();
     hideAndShow();
 });
+
+// DOM Helper Functions
 
 function resetFields(){
     document.getElementById('accountName').value = "";
