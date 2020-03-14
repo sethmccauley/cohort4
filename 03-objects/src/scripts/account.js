@@ -135,7 +135,7 @@ export class AccountController{
         this.accountList.splice(this.accountList.findIndex(value => value.name == accountName), 1);
     }
 
-    sortAccounts(){
+    returnLargest(){
         let largest = this.accountList[0];
         this.accountList.forEach( value => {
             if(value.totalBalance > largest.totalBalance) {
@@ -143,5 +143,27 @@ export class AccountController{
             }
         })
         return largest
+    }
+
+    returnSmallest(){
+        let smallest = this.accountList[0];
+        this.accountList.forEach( value => {
+            if(value.totalBalance < smallest.totalBalance) {
+                smallest = value;
+            }
+        })
+        return smallest
+    }
+
+    sumAccounts(){
+        let amount = 0;
+        this.accountList.forEach( (value) => {
+            amount += value.totalBalance;
+        })
+        return this.displayPretty(amount);
+    }
+
+    displayPretty(value){
+        return "$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 }

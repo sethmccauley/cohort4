@@ -37,14 +37,26 @@ test('Test the collection of accounts is working.', () => {
     expect(newCollection.accountList.length).toBe(1);
 });
 
-test('Sorting accounts for largest account.', () => {
+test('Sorting accounts.', () => {
     const newCollection = new AccountController();
     newCollection.addAccount(new Account('one',100));
     newCollection.addAccount(new Account('two',200));
     newCollection.addAccount(new Account('three',987654));
     newCollection.addAccount(new Account('four',201));
 
-    expect(newCollection.sortAccounts().name).toBe('three');
+    expect(newCollection.returnLargest().name).toBe('three');
+    expect(newCollection.returnSmallest().name).toBe('one');
     newCollection.removeAccount('three');
-    expect(newCollection.sortAccounts().name).toBe('four');
+    expect(newCollection.returnLargest().name).toBe('four');
+    expect(newCollection.returnSmallest().name).toBe('one');
+});
+
+test('Tallying total of accounts.', () => {
+    const newCollection = new AccountController();
+    newCollection.addAccount(new Account('one',100));
+    newCollection.addAccount(new Account('two',200));
+    newCollection.addAccount(new Account('three',987654));
+    newCollection.addAccount(new Account('four',201));
+
+    expect(newCollection.sumAccounts()).toBe('$988,155');
 });
