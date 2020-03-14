@@ -13,6 +13,8 @@ addAccount.addEventListener('click', () => {
 
     // Clean Up
     resetFields();
+    updateSummary();
+    hideAndShow();
 });
 
 accountController.addEventListener('click', (e) => {
@@ -21,9 +23,34 @@ accountController.addEventListener('click', (e) => {
         e.target.parentNode.parentNode.remove();
         accountManager.removeAccount(localAccountName);
     }
+    updateSummary();
+    hideAndShow();
 });
 
 function resetFields(){
     document.getElementById('accountName').value = "";
     document.getElementById('initialBalance').value = "";
+}
+
+function hideAndShow(){
+    let summary = document.getElementById('summary');
+    if( accountManager.accountList.length > 0 ) {
+        if (summary.className.indexOf("w3-show") == -1) {
+            summary.className += " w3-show";
+        }
+    } else {
+        summary.className = summary.className.replace(" w3-show", "");
+    }
+}
+
+function updateSummary(){
+    if( accountManager.accountList.length > 0 ) {
+        let largest = document.getElementById('largestAccount');
+        let smallest = document.getElementById('smallestAccount');
+        let sumAccounts = document.getElementById('sumOfAccounts');
+
+        largest.textContent = accountManager.returnLargest().name + ': ' + accountManager.returnLargest().balance();
+        smallest.textContent = accountManager.returnSmallest().name + ': ' + accountManager.returnSmallest().balance();
+        sumAccounts.textContent = accountManager.sumAccounts();
+    }
 }

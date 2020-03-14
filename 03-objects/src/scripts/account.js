@@ -158,12 +158,8 @@ export class AccountController{
     sumAccounts(){
         let amount = 0;
         this.accountList.forEach( (value) => {
-            amount += value.totalBalance;
+            amount += parseFloat(value.totalBalance, 10);
         })
-        return this.displayPretty(amount);
-    }
-
-    displayPretty(value){
-        return "$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parseFloat(amount, 10);
     }
 }
