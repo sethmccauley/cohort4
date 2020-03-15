@@ -58,5 +58,5 @@ test('Tallying total of accounts.', () => {
     newCollection.addAccount(new Account('three',987654));
     newCollection.addAccount(new Account('four',201));
 
-    expect(newCollection.sumAccounts()).toBe('$988,155');
+    expect(newCollection.sumAccounts()).toBe(988155);
 });
