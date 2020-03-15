@@ -16,3 +16,7 @@ const data = [
 test('Attempting to return first name.', () => {
     expect(functions.getFirstName(data)).toBe('Želmíra');
 });
+
+test('Test to retrieve an array of all names.', () => {
+    expect(functions.getAllFirstNames(data)).toEqual(['Želmíra','Denis','Millie','Adriána','Laura','Μεταγένης','Jack','Irene','Domnica','Helen'])
+});
