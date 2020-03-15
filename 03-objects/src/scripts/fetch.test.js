@@ -11,7 +11,11 @@ const data = [
     {"name":"Irene","surname":"Morales","gender":"female","region":"Spain"},
     {"name":"Domnica","surname":"Orășan","gender":"female","region":"Romania"},
     {"name":"Helen","surname":"Davidson","gender":"female","region":"United States"}
-]
+];
+
+const me = [
+    {"name": "Seth","surname":"McCauley","gender":"male","region":"Nebraska"}
+];
 
 test('Attempting to return first name.', () => {
     expect(functions.getFirstName(data)).toBe('Želmíra');
