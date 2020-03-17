@@ -21,17 +21,17 @@ addAccount.addEventListener('click', () => {
 });
 
 accountController.addEventListener('click', (e) => {
-    if(e.target.innerText == "Delete Account"){
+    if(e.target.innerText == "Delete Account" && e.target.tagName == "BUTTON"){
         let localAccountName = e.target.parentNode.parentNode.children[0].innerText;
         e.target.parentNode.parentNode.remove();
         accountManager.removeAccount(localAccountName);
     }
+    console.log(e.target.data)
     updateSummary();
     hideAndShow();
 });
 
 // DOM Helper Functions
-
 function resetFields(){
     document.getElementById('accountName').value = "";
     document.getElementById('initialBalance').value = "";
@@ -54,8 +54,8 @@ function updateSummary(){
         let smallest = document.getElementById('smallestAccount');
         let sumAccounts = document.getElementById('sumOfAccounts');
 
-        largest.textContent = accountManager.returnLargest().name + ': ' + accountManager.returnLargest().balance();
-        smallest.textContent = accountManager.returnSmallest().name + ': ' + accountManager.returnSmallest().balance();
+        largest.textContent = accountManager.returnLargest().name + ': ' + accountManager.returnLargest().displayPretty();
+        smallest.textContent = accountManager.returnSmallest().name + ': ' + accountManager.returnSmallest().displayPretty();
         sumAccounts.textContent = accountManager.sumAccounts();
     }
 }
