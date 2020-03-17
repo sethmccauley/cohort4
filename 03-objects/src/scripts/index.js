@@ -53,6 +53,9 @@ function updateSummary(){
         let largest = document.getElementById('largestAccount');
         let smallest = document.getElementById('smallestAccount');
         let sumAccounts = document.getElementById('sumOfAccounts');
+        
+        // console.log(accountManager.accountList);
+        // console.log(accountManager.returnLargest().name, accountManager.returnSmallest().name)
 
         largest.textContent = accountManager.returnLargest().name + ': ' + accountManager.returnLargest().displayPretty();
         smallest.textContent = accountManager.returnSmallest().name + ': ' + accountManager.returnSmallest().displayPretty();

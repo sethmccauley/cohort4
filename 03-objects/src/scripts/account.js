@@ -138,7 +138,7 @@ export class AccountController{
     returnLargest(){
         let largest = this.accountList[0];
         this.accountList.forEach( value => {
-            if(value.totalBalance > largest.totalBalance) {
+            if(parseFloat(value.totalBalance, 10) > parseFloat(largest.totalBalance, 10)) {
                 largest = value;
             }
         })
@@ -148,7 +148,7 @@ export class AccountController{
     returnSmallest(){
         let smallest = this.accountList[0];
         this.accountList.forEach( value => {
-            if(value.totalBalance < smallest.totalBalance) {
+            if(parseFloat(value.totalBalance, 10) < parseFloat(smallest.totalBalance, 10)) {
                 smallest = value;
             }
         })
