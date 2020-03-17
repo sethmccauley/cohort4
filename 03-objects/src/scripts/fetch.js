@@ -1,4 +1,3 @@
-
 const functions = {
 
     url: 'https://uinames.com/api/?amount=10',
@@ -11,7 +10,7 @@ const functions = {
         return data.map(value => value.name);
     },
 
-    showDelayProblem: () => {
+    showDelayProblem() {
         console.log('One');
         setTimeout(() => {          // Simulates a fetch
             console.log("Two");
@@ -19,7 +18,7 @@ const functions = {
         console.log('Three');       // We have a problem Huston
     },
 
-    async showDelaySolution: () => {
+    async showDelaySolution(){
         try {
             console.log('One');
             const value = await                 // Simulate fetch
@@ -35,7 +34,7 @@ const functions = {
         }
     },
 
-    async getUsers: () => {
+    async getUsers(){
         try {
             const response = await fetch(functions.url);
             const data = await response.json();
@@ -46,13 +45,13 @@ const functions = {
         }
     },
 
-    async workWithData: () => {
+    async workWithData(){
         const data = await functions.getUsers();
         console.log(functions.getFirstName(data));
         console.log(functions.getAllFirstNames(data));
     },
 
-    async postData: (url = '', data = {}) => {
+    async postData(url = '', data = {}){
         // Default options are marked with *
         const response = await fetch(url, {
             method: 'POST',     // *GET, POST, PUT, DELETE, etc.
@@ -67,7 +66,11 @@ const functions = {
             referrer: 'no-referrer',    // no-referrer, *client
             body: JSON.stringify(data)  // body data type must match "Content-Type" header
         })
-        return await response.json();   // parses JSON response into native JavaScript objects
+        const json = await response.json();   // parses JSON response into native JavaScript objects
+        //console.log('inside fetch: ', json)
+        json.status = response.status;
+        json.statusText = response.statusText;
+        return json;
     },
 }
 
