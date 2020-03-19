@@ -12,13 +12,18 @@
 <body>
     <div id="mainContent" class="w3-content w3-section">
         <h2>City Controller</h2>
-        <div class="w3-card w3-col s3 m3 l3 w3-light-grey w3-padding w3-margin" style="font-size: .8em; font-family: verdana; line-height: .9em">
+        <div class="w3-card w3-col s3 m3 l3 w3-light-grey w3-padding w3-margin" style="font-size: .8em; font-family: Verdana; line-height: .9em">
             <p>Create City</p>
             <input type="text" class="w3-input w3-border w3-rounded-small" id="cityName" placeholder="City Name"><br>
             <input type="number" class="w3-input w3-border w3-round-small" id="cityLat" placeholder="Latitude"><br>
             <input type="number" class="w3-input w3-border w3-round-small" id="cityLong" placeholder="Longitude"><br>
             <input type="number" class="w3-input w3-border w3-round-small" id="cityPop" placeholder="Population"><br>
             <button class="w3-button w3-block w3-blue w3-ripple w3-padding" id="addCity">+ Add City +</button>
+            <div id="summary" class="w3-section w3-hide" style="line-height: 1.3em; font-size: 1em">
+                <b>Most Northern:</b> <span id="mostNorthern"></span><br>
+                <b>Most Southern:</b> <span id="mostSouthern"></span><br>
+                <b>Total Pop.:</b> <span id="totalPopulation"></span><br>
+            </div>
         </div>
     </div>
     <script type="module" src="scripts/main.js"></script>

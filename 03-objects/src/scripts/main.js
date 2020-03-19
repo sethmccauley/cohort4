@@ -9,11 +9,13 @@ window.addEventListener('DOMContentLoaded', async () => {
     console.log('Data: ', data);
     data.forEach(value => {
         keyNumber++;
-        console.log(value.city);
-        console.log(keyNumber);
-        cityController.createCity(value.city.name, value.city.lat, value.city.long, value.city.pop);
+        // console.log(value.city);
+        // console.log(keyNumber);
+        cityController.createCity(value.city.name, parseFloat(value.city.lat, 10), parseFloat(value.city.long, 10), parseFloat(value.city.pop, 10));
         document.getElementById('mainContent').appendChild(cityController.createCard(cityController.cityList[cityController.cityList.length - 1]));
     })
+    updateSummary();
+    hideAndShow();
 });
 
 addCity.addEventListener('click', async () => {
@@ -28,5 +30,34 @@ addCity.addEventListener('click', async () => {
     } else {
         console.log(confirmation.status);
     }
-
+    updateSummary();
+    hideAndShow();
 })
+
+mainContent.addEventListener('click', () => {
+    updateSummary();
+    hideAndShow();
+})
+
+function hideAndShow(){
+    let summary = document.getElementById('summary');
+    if( cityController.cityList.length > 0 ) {
+        if (summary.className.indexOf("w3-show") == -1) {
+            summary.className += " w3-show";
+        }
+    } else {
+        summary.className = summary.className.replace(" w3-show", "");
+    }
+}
+
+function updateSummary(){
+    if( cityController.cityList.length > 0 ) {
+        let northern = document.getElementById('mostNorthern');
+        let southern = document.getElementById('mostSouthern');
+        let totalPop = document.getElementById('totalPopulation');
+        
+        northern.textContent = cityController.getMostNorthern().name;
+        southern.textContent = cityController.getMostSouthern().name;
+        totalPop.textContent = cityController.getPopulation();
+    }
+}

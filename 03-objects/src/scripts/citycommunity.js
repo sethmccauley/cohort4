@@ -1,3 +1,5 @@
+import functions from "./fetch.js";
+
 export class City {
     constructor(name, lat, long, pop){
         this.name = name;
@@ -71,7 +73,7 @@ export class Community {
     getPopulation(){
         let totalPop = 0;
         this.cityList.forEach( (value) => {
-            totalPop += value.pop;
+            totalPop += parseFloat(value.pop, 10);
         })
         return totalPop;
     }
@@ -86,7 +88,7 @@ export class Community {
 
     createCard(city){
         let tempDiv = document.createElement('div');
-        tempDiv.setAttribute('class', 'w3-card w3-col s3 m3 l3 w3-light-grey w3-padding w3-margin')
+        tempDiv.setAttribute('class', 'w3-card w3-col s6 m4 l3 w3-light-grey w3-padding w3-margin')
         tempDiv.setAttribute('style', 'font-size: .8em; font-family: verdana; line-height: 1em');
     
         let textBit = document.createElement('h5');
@@ -110,7 +112,45 @@ export class Community {
 
         let populationInput = document.createElement('input');
         populationInput.setAttribute('class', 'w3-input w3-border w3-round-small');
+        populationInput.setAttribute('type', 'number');
         populationInput.setAttribute('placeholder', 'Pop. Change');
+
+        let movedIn = document.createElement('button');
+        movedIn.setAttribute('class','w3-btn w3-small w3-light-green w3-inline w3-round-small w3-ripple');
+        movedIn.setAttribute('style', 'margin: 4px 2px;');
+        movedIn.textContent = " Moved In ";
+        movedIn.addEventListener('click', async () => {
+            if(!isNaN(populationInput.value)){
+                city.movedIn(parseFloat(populationInput.value, 10));
+                let tempPop = await functions.postData('http://localhost:5000/update', {key: this.cityList.findIndex(value => value.name == city.name), city: city})
+                delineation.textContent = 'Delineation: ' + city.howBig()
+                populationLabel.textContent = 'Population: ' + city.pop;
+                populationInput.value = "";
+            }
+        })
+
+        let movedOut = document.createElement('button');
+        movedOut.setAttribute('class','w3-btn w3-small w3-pink w3-inline w3-round-small w3-ripple');
+        movedOut.setAttribute('style', 'margin: 4px 2px;');
+        movedOut.textContent = "Moved Out";
+        movedOut.addEventListener('click', async () => {
+            if(!isNaN(populationInput.value)){
+                city.movedOut(parseFloat(populationInput.value, 10));
+                let tempPop = await functions.postData('http://localhost:5000/update', {key: this.cityList.findIndex(value => value.name == city.name), city: city});
+                delineation.textContent = 'Delineation: ' + city.howBig();
+                populationLabel.textContent = 'Population: ' + city.pop;
+                populationInput.value = "";
+            }
+        })
+
+        let deleteCity = document.createElement('button');
+        deleteCity.setAttribute('class','w3-btn w3-small w3-dark-grey w3-round-small w3-ripple w3-block w3-padding')
+        deleteCity.textContent = "- Delete City -"
+        deleteCity.addEventListener('click', async (e) => {
+            let tempDelete = await functions.postData('http://localhost:5000/delete', {key: this.cityList.findIndex(value => value.name == city.name)});
+            this.deleteCity(textBit.textContent);
+            e.target.parentNode.remove();
+        })
 
         tempDiv.appendChild(textBit)
         tempDiv.appendChild(delineation)
@@ -119,6 +159,9 @@ export class Community {
         tempDiv.appendChild(hemisphereLabel)
         tempDiv.appendChild(populationLabel)
         tempDiv.appendChild(populationInput)
+        tempDiv.appendChild(movedIn)
+        tempDiv.appendChild(movedOut)
+        tempDiv.appendChild(deleteCity)
 
         return tempDiv;
     }

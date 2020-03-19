@@ -14,6 +14,7 @@ test('Checking size of city object.', () => {
     expect(newCity.howBig()).toBe('Large Town');
     newCity.movedIn(100000);
     expect(newCity.howBig()).toBe('City');
+    newCity.movedOut(1);
 });
 
 test('Testing single string show().', () => {
@@ -35,9 +36,11 @@ test('Checking northern/southern comparisons.', () => {
     let newCommunity = new Community();
     newCommunity.createCity('Sydney',-33.87,151,100000);
     newCommunity.createCity('Rome',41.902782,12.496365,1000000);
+    newCommunity.createCity('My Town',112,1.1241,131511);
+    newCommunity.createCity('South Pole',-100,0,1);
 
-    expect(newCommunity.getMostNorthern().name).toBe('Rome');
-    expect(newCommunity.getMostSouthern().name).toBe('Sydney');
+    expect(newCommunity.getMostNorthern().name).toBe('My Town');
+    expect(newCommunity.getMostSouthern().name).toBe('South Pole');
 });
 
 test('Checking addition of cities and removal working as intended.', () => {
@@ -50,7 +53,6 @@ test('Checking addition of cities and removal working as intended.', () => {
 
     newCommunity.deleteCity(lincoln);
     expect(newCommunity.cityList.length).toBe(2);
-    // newCommunity.cityList.forEach(value => console.log(value.show()))
 });
 
 test('Testing total Population summation.', () => {
@@ -61,3 +63,14 @@ test('Testing total Population summation.', () => {
 
     expect(newCommunity.getPopulation()).toBe(1400000);
 });
+
+test('Did the card get created?', () => {
+    document.body.innerHTML = `
+        <div id='root'>
+        </div>
+    `
+    let newCommunity = new Community();
+    newCommunity.createCity('My House', 1, 1, 1);
+    document.getElementById('root').appendChild(newCommunity.createCard(newCommunity.cityList[0]));
+    expect(document.getElementById('root').children.length).toBe(1);
+})
