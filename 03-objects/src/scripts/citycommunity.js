@@ -80,7 +80,46 @@ export class Community {
         this.cityList.push(new City(name, lat, long, pop));
     }
 
-    deleteCity(city){
-        this.cityList.splice(this.cityList.findIndex(value => value == city), 1);
+    deleteCity(cityName){
+        this.cityList.splice(this.cityList.findIndex(value => value.name == cityName), 1);
+    }
+
+    createCard(city){
+        let tempDiv = document.createElement('div');
+        tempDiv.setAttribute('class', 'w3-card w3-col s3 m3 l3 w3-light-grey w3-padding w3-margin')
+        tempDiv.setAttribute('style', 'font-size: .8em; font-family: verdana; line-height: 1em');
+    
+        let textBit = document.createElement('h5');
+        textBit.setAttribute('style', 'font-weight: 600;text-decoration: underline');
+        textBit.textContent = city.name;
+    
+        let latLabel = document.createElement('span');
+        latLabel.textContent = 'Lat: ' + city.lat + ' ; ';
+    
+        let longLabel = document.createElement('span');
+        longLabel.textContent = 'Long: ' + city.long;
+    
+        let hemisphereLabel = document.createElement('p');
+        hemisphereLabel.textContent = this.whichSphere(city);
+
+        let populationLabel = document.createElement('p');
+        populationLabel.textContent = 'Population: ' + city.pop;
+
+        let delineation = document.createElement('p');
+        delineation.textContent = 'Delineation: ' + city.howBig();
+
+        let populationInput = document.createElement('input');
+        populationInput.setAttribute('class', 'w3-input w3-border w3-round-small');
+        populationInput.setAttribute('placeholder', 'Pop. Change');
+
+        tempDiv.appendChild(textBit)
+        tempDiv.appendChild(delineation)
+        tempDiv.appendChild(latLabel)
+        tempDiv.appendChild(longLabel)
+        tempDiv.appendChild(hemisphereLabel)
+        tempDiv.appendChild(populationLabel)
+        tempDiv.appendChild(populationInput)
+
+        return tempDiv;
     }
 }

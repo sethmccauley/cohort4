@@ -26,24 +26,26 @@ test('Test to retrieve an array of all names.', () => {
     expect(functions.getAllFirstNames(data)).toEqual(['Želmíra','Denis','Millie','Adriána','Laura','Μεταγένης','Jack','Irene','Domnica','Helen'])
 });
 
+test('Testing getUsers.', async () =>{
+    //let url = 'https://uinames.com/api/?amount=10';
+    let data = await functions.getUsers();
+    expect(data.length).toBe(10);
+});
+
 const url = 'http://localhost:5000/';
 
 test('Checking the fetch request works.', async () => {
     const users = [{key:1,name:'Seth'},{key:2,name:'Madison'}]
 
     let data = await functions.postData(url + 'clear');
-    //console.log('clear', data)
 
-    data = await functions.postData(url + 'all');
-    expect(data.status).toEqual(200);
-    //console.log('all', data)
+    // data = await functions.postData(url + 'all');
+    // expect(data.status).toEqual(200);
 
-    data = await functions.postData(url + 'add', users[0]);
-    expect(data.status).toEqual(200);
-    //console.log('add', data)
+    // data = await functions.postData(url + 'add', users[0]);
+    // expect(data.status).toEqual(200);
 
-    data = await functions.postData(url + 'all');
-    expect(data.length).toBe(1);
-    expect(data[0].name).toBe('Seth');
-    //console.log('all', data)
+    // data = await functions.postData(url + 'all');
+    // expect(data.length).toBe(1);
+    // expect(data[0].name).toBe('Seth');
 });

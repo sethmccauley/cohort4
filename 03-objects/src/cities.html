@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainContent" class="w3-content w3-section">
+        <h2>City Controller</h2>
+        <div class="w3-card w3-col s3 m3 l3 w3-light-grey w3-padding w3-margin" style="font-size: .8em; font-family: verdana; line-height: .9em">
+            <p>Create City</p>
+            <input type="text" class="w3-input w3-border w3-rounded-small" id="cityName" placeholder="City Name"><br>
+            <input type="number" class="w3-input w3-border w3-round-small" id="cityLat" placeholder="Latitude"><br>
+            <input type="number" class="w3-input w3-border w3-round-small" id="cityLong" placeholder="Longitude"><br>
+            <input type="number" class="w3-input w3-border w3-round-small" id="cityPop" placeholder="Population"><br>
+            <button class="w3-button w3-block w3-blue w3-ripple w3-padding" id="addCity">+ Add City +</button>
+        </div>
+    </div>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/fetch.js"></script>
+</body>
+</html>
