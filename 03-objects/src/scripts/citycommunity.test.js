@@ -74,3 +74,16 @@ test('Did the card get created?', () => {
     document.getElementById('root').appendChild(newCommunity.createCard(newCommunity.cityList[0]));
     expect(document.getElementById('root').children.length).toBe(1);
 })
+
+test('Testing by object reference.', () => {
+    let newCity = new City('Sydney',-33.87,151,100000)
+
+    let myFav = newCity;
+    expect(myFav.pop).toBe(newCity.pop);
+
+    newCity.movedIn(20);
+    expect(myFav.pop).toBe(newCity.pop);
+
+    myFav.movedIn(20);
+    expect(myFav.pop).toBe(newCity.pop);
+})
