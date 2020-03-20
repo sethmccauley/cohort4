@@ -1,11 +1,12 @@
 import functions from "./fetch.js";
 
 export class City {
-    constructor(name, lat, long, pop){
+    constructor(name, lat, long, pop, key){
         this.name = name;
         this.lat = lat;
         this.long = long;
         this.pop = pop;
+        this.key = key;
     }
 
     show(){
@@ -78,8 +79,8 @@ export class Community {
         return totalPop;
     }
 
-    createCity(name, lat, long, pop){
-        this.cityList.push(new City(name, lat, long, pop));
+    createCity(name, lat, long, pop, key){
+        this.cityList.push(new City(name, lat, long, pop, key));
     }
 
     deleteCity(cityName){
@@ -88,7 +89,7 @@ export class Community {
 
     createCard(city){
         let tempDiv = document.createElement('div');
-        tempDiv.setAttribute('class', 'w3-card w3-col s6 m4 l3 w3-light-grey w3-padding w3-margin')
+        tempDiv.setAttribute('class', 'w3-card w3-col s6 m4 l3 w3-light-grey w3-padding w3-margin');
         tempDiv.setAttribute('style', 'font-size: .8em; font-family: verdana; line-height: 1em');
     
         let textBit = document.createElement('h5');
@@ -122,7 +123,7 @@ export class Community {
         movedIn.addEventListener('click', async () => {
             if(!isNaN(populationInput.value)){
                 city.movedIn(parseFloat(populationInput.value, 10));
-                let tempPop = await functions.postData('http://localhost:5000/update', {key: this.cityList.findIndex(value => value.name == city.name), city: city})
+                let tempPop = await functions.postData('http://localhost:5000/update', {key: city.key, city: city})
                 delineation.textContent = 'Delineation: ' + city.howBig()
                 populationLabel.textContent = 'Population: ' + city.pop;
                 populationInput.value = "";
@@ -136,7 +137,7 @@ export class Community {
         movedOut.addEventListener('click', async () => {
             if(!isNaN(populationInput.value)){
                 city.movedOut(parseFloat(populationInput.value, 10));
-                let tempPop = await functions.postData('http://localhost:5000/update', {key: this.cityList.findIndex(value => value.name == city.name), city: city});
+                let tempPop = await functions.postData('http://localhost:5000/update', {key: city.key, city: city});
                 delineation.textContent = 'Delineation: ' + city.howBig();
                 populationLabel.textContent = 'Population: ' + city.pop;
                 populationInput.value = "";
@@ -147,7 +148,7 @@ export class Community {
         deleteCity.setAttribute('class','w3-btn w3-small w3-dark-grey w3-round-small w3-ripple w3-block w3-padding')
         deleteCity.textContent = "- Delete City -"
         deleteCity.addEventListener('click', async (e) => {
-            let tempDelete = await functions.postData('http://localhost:5000/delete', {key: this.cityList.findIndex(value => value.name == city.name)});
+            let tempDelete = await functions.postData('http://localhost:5000/delete', {key: city.key});
             this.deleteCity(textBit.textContent);
             e.target.parentNode.remove();
         })

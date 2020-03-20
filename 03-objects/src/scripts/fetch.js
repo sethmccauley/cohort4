@@ -1,25 +1,25 @@
 const functions = {
 
-    url: 'https://uinames.com/api/?amount=10',
+    // url: 'https://uinames.com/api/?amount=10',
 
-    getFirstName: (data) => {
-        return data[0].name;
-    },
+    // getFirstName: (data) => {
+    //     return data[0].name;
+    // },
 
-    getAllFirstNames: (data) => {
-        return data.map(value => value.name);
-    },
+    // getAllFirstNames: (data) => {
+    //     return data.map(value => value.name);
+    // },
 
-    async getUsers(){
-        try {
-            const response = await fetch(functions.url);
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('Error:', error);
-            throw (error);
-        }
-    },
+    // async getUsers(){
+    //     try {
+    //         const response = await fetch(functions.url);
+    //         const data = await response.json();
+    //         return data;
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //         throw (error);
+    //     }
+    // },
 
     // async workWithData(){
     //     const data = await functions.getUsers();
@@ -43,7 +43,6 @@ const functions = {
             body: JSON.stringify(data)  // body data type must match "Content-Type" header
         })
         const json = await response.json();   // parses JSON response into native JavaScript objects
-        //console.log('inside fetch: ', json)
         json.status = response.status;
         json.statusText = response.statusText;
         return json;

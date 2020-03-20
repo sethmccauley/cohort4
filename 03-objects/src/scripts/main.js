@@ -8,20 +8,18 @@ window.addEventListener('DOMContentLoaded', async () => {
     let data = await functions.postData('http://localhost:5000/all')
     console.log('Data: ', data);
     data.forEach(value => {
-        keyNumber++;
-        // console.log(value.city);
-        // console.log(keyNumber);
-        cityController.createCity(value.city.name, parseFloat(value.city.lat, 10), parseFloat(value.city.long, 10), parseFloat(value.city.pop, 10));
+        cityController.createCity(value.city.name, parseFloat(value.city.lat, 10), parseFloat(value.city.long, 10), parseFloat(value.city.pop, 10), value.key);
         document.getElementById('mainContent').appendChild(cityController.createCard(cityController.cityList[cityController.cityList.length - 1]));
+        if (value.key >= keyNumber) keyNumber = value.key + 1;
     })
     updateSummary();
     hideAndShow();
 });
 
 addCity.addEventListener('click', async () => {
-    cityController.createCity(document.getElementById('cityName').value,document.getElementById('cityLat').value,document.getElementById('cityLong').value,document.getElementById('cityPop').value);
-    console.log(document.getElementById('cityName').value,document.getElementById('cityLat').value,document.getElementById('cityLong').value,document.getElementById('cityPop').value)
-    console.log(cityController.cityList[cityController.cityList.length - 1])
+    cityController.createCity(document.getElementById('cityName').value,document.getElementById('cityLat').value,document.getElementById('cityLong').value,document.getElementById('cityPop').value,keyNumber);
+    // console.log(document.getElementById('cityName').value,document.getElementById('cityLat').value,document.getElementById('cityLong').value,document.getElementById('cityPop').value)
+    // console.log(cityController.cityList[cityController.cityList.length - 1])
     let confirmation = await functions.postData('http://localhost:5000/add',{key: keyNumber, city: cityController.cityList[cityController.cityList.length - 1]});
     if (confirmation.status == 200) {
         console.log('City Added to Remote.');
@@ -34,7 +32,7 @@ addCity.addEventListener('click', async () => {
     hideAndShow();
 })
 
-mainContent.addEventListener('click', () => {
+document.body.addEventListener('click', () => {
     updateSummary();
     hideAndShow();
 })

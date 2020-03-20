@@ -18,19 +18,19 @@ const me = [
     {"name": "Seth","surname":"McCauley","gender":"male","region":"Nebraska"}
 ];
 
-test('Attempting to return first name.', () => {
-    expect(functions.getFirstName(data)).toBe('Želmíra');
-});
+// test('Attempting to return first name.', () => {
+//     expect(functions.getFirstName(data)).toBe('Želmíra');
+// });
 
-test('Test to retrieve an array of all names.', () => {
-    expect(functions.getAllFirstNames(data)).toEqual(['Želmíra','Denis','Millie','Adriána','Laura','Μεταγένης','Jack','Irene','Domnica','Helen'])
-});
+// test('Test to retrieve an array of all names.', () => {
+//     expect(functions.getAllFirstNames(data)).toEqual(['Želmíra','Denis','Millie','Adriána','Laura','Μεταγένης','Jack','Irene','Domnica','Helen'])
+// });
 
-test('Testing getUsers.', async () =>{
-    //let url = 'https://uinames.com/api/?amount=10';
-    let data = await functions.getUsers();
-    expect(data.length).toBe(10);
-});
+// test('Testing getUsers.', async () =>{
+//     //let url = 'https://uinames.com/api/?amount=10';
+//     let data = await functions.getUsers();
+//     expect(data.length).toBe(10);
+// });
 
 const url = 'http://localhost:5000/';
 
