@@ -24,12 +24,12 @@ class CloudSVG extends React.Component {
         return (
             <svg 
                 onClick={this.clickChange}
+                viewBox="0 0 58.21 58.21"
                 width={this.props.width} 
                 height={this.props.height}
                 className={this.props.className}
                 xmlns="http://www.w3.org/2000/svg" 
                 xmlnsXlink="http://www.w3.org/1999/xlink" 
-                viewBox="0 0 58.21 58.21" 
             >
                 <g pointerEvents="bounding-box">
                     <path fill={this.state.color} d="M48.077,25.553c0.021-0.304,0.03-0.604,0.03-0.897c0-8.459-6.882-15.341-15.34-15.341

@@ -8,7 +8,6 @@
 }
 
 .App-svg,.App-svg-anti {
-  height: 10vh;
   fill: white;
   pointer-events: none;
 }

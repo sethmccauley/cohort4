@@ -21,10 +21,10 @@ class App extends React.Component {
       <div className="App">
         <div style={{backgroundColor: '#282c34'}}>
           <br />
-          <Cloud height="100px" width="100px" className="App-svg" onClick={this.clickTest} />
-          <SnesSVG height="100px" width="100px" className="App-svg" onClick={this.clickTest} />
-          <PsSVG height="100px" width="100px" className="App-svg" onClick={this.clickTest} />
-          <XboxSVG height="100px" width="100px" className="App-svg" onClick={this.clickTest} />
+          <Cloud height="150px" width="150px" className="App-svg" onClick={this.clickTest} />
+          <SnesSVG height="150px" width="150px" className="App-svg" onClick={this.clickTest} />
+          <PsSVG height="150px" width="150px" className="App-svg" onClick={this.clickTest} />
+          <XboxSVG height="150px" width="150px" className="App-svg" onClick={this.clickTest} />
         </div>
         <header className="App-header">
           <img src={logo} className="App-logo-anti" alt="logo" />
