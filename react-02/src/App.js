@@ -12,10 +12,6 @@ class App extends React.Component {
     super();
   }
 
-  clickTest = () => {
-    console.log('SVG Was clicked!');
-  }
-
   render() {
     return (
       <div className="App">
