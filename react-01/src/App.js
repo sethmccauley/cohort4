@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MyComponent from './components/MyComponent';
+import EvenComponent from './components/EvenComponent';
+import OddComponent from './components/OddComponent';
 
 class App extends React.Component {
   constructor() {
@@ -39,7 +41,8 @@ class App extends React.Component {
             Learn React
           </a>
         </header>
-        <MyComponent />
+        <MyComponent whatToSay={this.onPushMe} />
+        {this.counter % 2 === 0 ? <EvenComponent /> : <OddComponent />}
       </div>
     );
   }

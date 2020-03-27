@@ -5,7 +5,7 @@ class MyComp extends React.Component {
     render() {
         return(
             <div>
-                <h1>Hello World from my component.</h1>
+                <h1><button onClick={this.props.whatToSay}>Push Me</button></h1>
             </div>
         )
     }

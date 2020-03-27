@@ -37,7 +37,7 @@ const url = 'http://localhost:5000/';
 test('Checking the fetch request works.', async () => {
     const users = [{key:1,name:'Seth'},{key:2,name:'Madison'}]
 
-    //let data = await functions.postData(url + 'clear');
+    let data = await functions.postData(url + 'clear');
 
     // data = await functions.postData(url + 'all');
     // expect(data.status).toEqual(200);

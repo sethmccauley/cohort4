@@ -11,6 +11,7 @@ test('Testing a constructor...', () => {
     expect(cardManager).toEqual(new CardManager(buttonElement));
 });
 
+
 test('Test method call.', () => {
     document.body.innerHTML = `
         <div>
@@ -20,6 +21,7 @@ test('Test method call.', () => {
         </div>
     `;
 
+    // Fetch Button and Instantiate Object
     const buttonElement = document.getElementById('addCard');
     const cardManager = new CardManager(buttonElement);
 
