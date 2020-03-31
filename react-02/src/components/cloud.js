@@ -1,26 +1,17 @@
 import React from 'react';
 
 class CloudSVG extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            color: "#FFF",
-        }
+    constructor(props) {
+        super(props);
     }
-    clickChange = () => {
-        let tempChange = ""
-        if(this.state.color === "#FFF"){
-            tempChange = "#000";
-        } else {
-            tempChange = "#FFF";
-        }
-        this.setState({
-            color: tempChange,
-        })
 
+    clickChange = () => {
+        this.props.navChange("home");
     }
 
     render() {
+        let colorFill = this.props.active === "home" ? "#4078c0" : "#FFF";
+
         return (
             <svg 
                 onClick={this.clickChange}
@@ -31,8 +22,9 @@ class CloudSVG extends React.Component {
                 xmlns="http://www.w3.org/2000/svg" 
                 xmlnsXlink="http://www.w3.org/1999/xlink" 
             >
+                <title>{this.props.title}</title>
                 <g pointerEvents="bounding-box">
-                    <path fill={this.state.color} d="M48.077,25.553c0.021-0.304,0.03-0.604,0.03-0.897c0-8.459-6.882-15.341-15.34-15.341
+                    <path fill={colorFill} d="M48.077,25.553c0.021-0.304,0.03-0.604,0.03-0.897c0-8.459-6.882-15.341-15.34-15.341
                         c-6.084,0-11.598,3.611-14.032,9.174c-0.029,0.042-0.123,0.106-0.161,0.117c-3.776,0.395-7.116,2.797-8.713,6.266
                         c-0.046,0.088-0.227,0.236-0.316,0.263C3.925,26.369,0,31.231,0,36.96c0,6.692,5.341,11.935,12.159,11.935h34.448
                         c6.397,0,11.603-5.307,11.603-11.83C58.21,31.164,53.783,26.278,48.077,25.553z M46.607,45.894H12.159
