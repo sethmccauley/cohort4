@@ -75,3 +75,23 @@
     transform: rotate(-360deg);
   }
 }
+
+.square {
+  min-width: 80px;
+  min-height: 80px;
+  font-size: 2em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.game {
+
+}
+
+.game-board {
+
+}
+
+.game-info {
+  font-size: 1em;
+}
