@@ -32,10 +32,11 @@
 }
 
 .App-main {
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  vertical-align: middle;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -76,7 +77,7 @@
 .square {
   min-width: 80px;
   min-height: 80px;
-  font-size: 2em;
+  font-size: 1.6em;
   text-align: center;
   vertical-align: middle;
 }

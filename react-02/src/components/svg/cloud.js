@@ -1,10 +1,6 @@
 import React from 'react';
 
 class CloudSVG extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     clickChange = () => {
         this.props.navChange("home");
     }

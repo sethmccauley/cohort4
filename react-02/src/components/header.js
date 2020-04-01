@@ -3,13 +3,8 @@ import Cloud from './svg/cloud.js';
 import SnesSVG from './svg/snes.js';
 import PsSVG from './svg/ps.js';
 import XboxSVG from './svg/xbox.js';
-import { render } from '@testing-library/react';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>

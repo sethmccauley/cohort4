@@ -1,11 +1,6 @@
 import React from 'react';
 
 class SnesSVG extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
-
     clickChange = () => {
         this.props.navChange("game");
     }

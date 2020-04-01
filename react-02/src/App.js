@@ -5,7 +5,6 @@ import Game from './components/game/game';
 import Ph1 from './components/ph1';
 import Ph2 from './components/ph2';
 import './App.css';
-import { render } from '@testing-library/react';
 
 class App extends React.Component {
   constructor() {

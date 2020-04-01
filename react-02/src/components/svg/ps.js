@@ -1,10 +1,6 @@
 import React from 'react';
 
 class PsSVG extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     clickChange = () => {
         this.props.navChange("ph1");
     }
