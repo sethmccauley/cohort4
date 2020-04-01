@@ -22,7 +22,6 @@
 }
 
 .App-header {
-  background-image: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
   min-height: 5vh;
   display: flex;
   flex-direction: column;
@@ -33,7 +32,6 @@
 }
 
 .App-main {
-  background-image: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
   min-height: 75vh;
   display: flex;
   flex-direction: column;
@@ -44,7 +42,6 @@
 }
 
 .App-footer {
-  background-image: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
   min-height: 5vh;
   display: flex;
   flex-direction: column;

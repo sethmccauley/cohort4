@@ -1,8 +1,8 @@
 import React from 'react';
-import Cloud from '../components/cloud.js';
-import SnesSVG from '../components/snes.js';
-import PsSVG from '../components/ps.js';
-import XboxSVG from '../components/xbox.js';
+import Cloud from './svg/cloud.js';
+import SnesSVG from './svg/snes.js';
+import PsSVG from './svg/ps.js';
+import XboxSVG from './svg/xbox.js';
 import { render } from '@testing-library/react';
 
 class Header extends React.Component {
