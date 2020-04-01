@@ -14,10 +14,10 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo,.App-svg {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 25s linear;
   }
   .App-logo-anti,.App-svg-anti {
-    animation: App-logo-antispin infinite 20s linear;
+    animation: App-logo-antispin infinite 25s linear;
   }
 }
 
@@ -82,11 +82,11 @@
 }
 
 .game {
-
+  font-size: 1em;
 }
 
 .game-board {
-
+  font-size: 1em;
 }
 
 .game-info {
