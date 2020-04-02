@@ -37,7 +37,6 @@
   flex-direction: column;
   align-items: center;
   vertical-align: middle;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -82,7 +81,21 @@
   vertical-align: middle;
 }
 
+.homeBase {
+  margin-top: 300px;
+}
+
+.accountController {
+  margin-top: 50px;
+}
+
+.community {
+  margin-top: 50px;
+}
+
 .game {
+  justify-content: start;
+  margin-top: 100px;
   font-size: 1em;
 }
 

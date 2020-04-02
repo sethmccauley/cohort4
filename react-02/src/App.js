@@ -2,9 +2,10 @@ import React from 'react';
 import Header from './components/header';
 import Home from './components/home';
 import Game from './components/game/game';
-import Ph1 from './components/ph1';
-import Ph2 from './components/ph2';
+import AccountController from './components/accounts/accountController';
+import Community from './components/citycommunity/community';
 import './App.css';
+import './w3.css';
 
 class App extends React.Component {
   constructor() {
@@ -18,13 +19,19 @@ class App extends React.Component {
   choosePage() {
     switch (this.state.display){
       case("home"):
-        return <Home />
+        return( 
+        <main className="App-main">
+          <Home />
+        </main>)
       case("game"):
-        return <Game />
+        return (
+        <main className="App-main">
+          <Game />
+        </main>)
       case("ph1"):
-        return <Ph1 />
+        return <AccountController />
       case("ph2"):
-        return <Ph2 />
+        return <Community />
       default:
         return <Home />
     }
@@ -42,7 +49,7 @@ class App extends React.Component {
         <header className="App-header">
           <Header active={this.state.display} navChange={this.setDisplay} />
         </header>
-        <main className="App-main">
+        <main className="w3-content w3-section">
           {this.choosePage()}
         </main>
         <footer className="App-footer">

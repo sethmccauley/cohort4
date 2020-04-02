@@ -101,7 +101,7 @@ class Game extends React.Component {
         }
 
         return (
-            <div className="game">
+            <div className="App-main">
                 <div className="game-board">
                     <h1> Tic Tac Toe </h1>
                     <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
