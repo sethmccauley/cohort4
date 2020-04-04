@@ -2,7 +2,7 @@ import React from 'react';
 
 class PsSVG extends React.Component {
     clickChange = () => {
-        this.props.navChange("ph1");
+        this.props.navChange("account");
     }
 
     render() {

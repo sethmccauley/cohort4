@@ -2,7 +2,7 @@ import React from 'react';
 
 class XboxSVG extends React.Component {
     clickChange = () => {
-        this.props.navChange("ph2");
+        this.props.navChange("xbox");
     }
 
     render() {

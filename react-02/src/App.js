@@ -28,9 +28,9 @@ class App extends React.Component {
         <main className="App-main">
           <Game />
         </main>)
-      case("ph1"):
+      case("account"):
         return <AccountController />
-      case("ph2"):
+      case("xbox"):
         return <Community />
       default:
         return <Home />
