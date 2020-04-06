@@ -2,11 +2,11 @@ import React from 'react';
 
 class XboxSVG extends React.Component {
     clickChange = () => {
-        this.props.navChange("cities");
+        this.props.navChange("xbox");
     }
 
     render() {
-        let colorFill = this.props.active === "cities" ? "#4078c0" : "#FFF"
+        let colorFill = this.props.active === "ph2" ? "#4078c0" : "#FFF"
 
         return (
             <svg

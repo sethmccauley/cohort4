@@ -29,11 +29,25 @@ class App extends React.Component {
           <Game />
         </main>)
       case("account"):
-        return <AccountController />
-      case("xbox"):
-        return <Community />
+        return(
+          <main className="w3-content w3-section">
+            <AccountController />
+          </main>)
+      case("cities"):
+        return(
+          <main className="w3-content w3-section">
+            <Community />
+          </main>)
+      case("linkedList"):
+        return(
+          <main className="App-main">
+            <Home />
+          </main>)
       default:
-        return <Home />
+        return(
+          <main className="App-main">
+            <Home />
+          </main>)
     }
   }
 
@@ -49,9 +63,7 @@ class App extends React.Component {
         <header className="App-header">
           <Header active={this.state.display} navChange={this.setDisplay} />
         </header>
-        <main className="w3-content w3-section">
-          {this.choosePage()}
-        </main>
+        {this.choosePage()}
         <footer className="App-footer">
         </footer>
       </div>

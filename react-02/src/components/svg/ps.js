@@ -6,7 +6,7 @@ class PsSVG extends React.Component {
     }
 
     render() {
-        let colorFill = this.props.active === "ph1" ? "#4078c0" : "#FFF"
+        let colorFill = this.props.active === "account" ? "#4078c0" : "#FFF"
         return (
             <svg
                 onClick={this.clickChange} 

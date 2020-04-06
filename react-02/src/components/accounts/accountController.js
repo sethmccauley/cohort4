@@ -52,6 +52,8 @@ class AccountController extends React.Component {
     }
     withdraw = (name, amt) => {
         const localAcc = this.fetchAccount(name)
+        console.log(localAcc)
+        console.log(name, amt)
         localAcc.a.withdraw(parseFloat(amt, 10))
 
         this.setState({
@@ -101,7 +103,8 @@ class AccountController extends React.Component {
 
         return (
             <div className="w3-content w3-section">
-                <h1 style={{color: 'white'}}> Account Controller</h1>
+                <h1 style={{color: 'white'}}> Account Management </h1>
+                <p style={{color: 'white'}}>Keep track of your finances.</p>
                 <div className="w3-container w3-card-4 w3-light-grey w3-border w2-round-small w3-padding w3-margin-bottom" style={{width: '100%', height: '100%'}}>
                     <div className="w3-col" style={{width: '50px'}}>
                         <i className="w3-xxlarge fa fa-user-circle fa-2x"></i>

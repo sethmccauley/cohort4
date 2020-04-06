@@ -13,7 +13,7 @@ export class Account{
     }
 
     balance(){
-        return this.totalBalance;
+        return parseFloat(this.totalBalance, 10);
     }
 
     displayPretty(){
