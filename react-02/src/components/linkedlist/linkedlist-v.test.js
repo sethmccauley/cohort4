@@ -26,12 +26,6 @@ test('Testing LinkedList constructor and insert.', () => {
     expect(newList.currentNode.show()).toBe('Subject: Thor; Amount: 600')
     newList.previous()
     expect(newList.currentNode.show()).toBe('Subject: Sylvestre; Amount: 13')
-
-    // expect(newList.currentNode.show()).toBe('Subject: Caitlin; Amount: 31')
-    // expect(newList.next().show()).toBe('Subject: Superman; Amount: 50')
-    // expect(newList.currentNode.show()).toBe('Subject: Superman; Amount: 50')
-    // expect(newList.next().show()).toBe(null)
-    // expect(newlist.last().show()).toBe('Subject: Superman; Amount: 50')
 })
 
 test('Testing LinkedList deletion.', () => {
