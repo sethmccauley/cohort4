@@ -43,7 +43,7 @@ export default class LinkedList {
     }
     previous(){
         let localNode = this.headNode
-        let prevNode = null
+        let prevNode = this.headNode
         while(localNode !== this.currentNode){
             prevNode = localNode
             localNode = localNode.forwardNode
@@ -59,7 +59,7 @@ export default class LinkedList {
             this.headNode = newNode
             this.currentNode = newNode
             this._length++
-            return newNode
+            return this.currentNode
         }
 
         while(localNode !== this.currentNode){
@@ -68,7 +68,7 @@ export default class LinkedList {
         let nextNode = localNode.forwardNode
         localNode.forwardNode = newNode
         newNode.forwardNode = nextNode
-        
+
         this.currentNode = newNode
         this._length++
 
@@ -76,31 +76,25 @@ export default class LinkedList {
     }
     delete(){
         let localNode = this.headNode
-        let currentNode = this.currentNode
-        let length = this._length
-        let prevNode = null
-        
-        if(length = 0) {
-            throw new Error('Unable to remove, list is empty.')
+        let prevNode = this.headNode
+
+        if(this._length === 0) {
+            throw new Error()
         }
 
-        if(length = 1) {
-            localNode = null
-            this._length--
-            return this.headNode
-        }
-
-        if(length > 1) {
-            while(localNode !== currentNode){
+        if(this.currentNode === this.headNode){
+            this.headNode = this.currentNode.forwardNode
+            this.currentNode = this.headNode
+        } else {
+            while(localNode !== this.currentNode){
                 prevNode = localNode
                 localNode = localNode.forwardNode
             }
             prevNode.forwardNode = localNode.forwardNode
-            currentNode = null
-            this._length--
             this.currentNode = prevNode
-            return this.currentNode
         }
+        this._length--
+        return this.currentNode
     }
     total(){
         let localNode = this.headNode
