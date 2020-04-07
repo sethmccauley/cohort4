@@ -4,6 +4,7 @@ import Home from './components/home';
 import Game from './components/game/game';
 import AccountController from './components/accounts/accountController';
 import Community from './components/citycommunity/community';
+import LinkedList from './components/linkedlist/linkedlist';
 import './App.css';
 import './w3.css';
 
@@ -19,35 +20,17 @@ class App extends React.Component {
   choosePage() {
     switch (this.state.display){
       case("home"):
-        return( 
-        <main className="App-main">
-          <Home />
-        </main>)
+        return(<main className="App-main"><Home /></main>)
       case("game"):
-        return (
-        <main className="App-main">
-          <Game />
-        </main>)
+        return (<main className="App-main"><Game /></main>)
       case("account"):
-        return(
-          <main className="w3-content w3-section">
-            <AccountController />
-          </main>)
+        return(<main className="w3-content w3-section"><AccountController /></main>)
       case("cities"):
-        return(
-          <main className="w3-content w3-section">
-            <Community />
-          </main>)
+        return(<main className="w3-content w3-section"><Community /></main>)
       case("linkedList"):
-        return(
-          <main className="App-main">
-            <Home />
-          </main>)
+        return(<main className="App-main"><LinkedList /></main>)
       default:
-        return(
-          <main className="App-main">
-            <Home />
-          </main>)
+        return(<main className="App-main"><Home /></main>)
     }
   }
 
