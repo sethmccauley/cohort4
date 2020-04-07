@@ -62,11 +62,13 @@ export default class LinkedList {
             return newNode
         }
 
-        while(localNode.forwardNode){
+        while(localNode !== this.currentNode){
             localNode = localNode.forwardNode
         }
-
+        let nextNode = localNode.forwardNode
         localNode.forwardNode = newNode
+        newNode.forwardNode = nextNode
+        
         this.currentNode = newNode
         this._length++
 
