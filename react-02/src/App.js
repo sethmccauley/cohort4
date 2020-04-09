@@ -5,6 +5,7 @@ import Game from './components/game/game';
 import AccountController from './components/accounts/accountController';
 import Community from './components/citycommunity/community';
 import LinkedListController from './components/linkedlist/linkedlistcontroller';
+import FifoLifo from './components/fifolifo/fifolifo';
 import './App.css';
 import './w3.css';
 
@@ -29,6 +30,8 @@ class App extends React.Component {
         return(<main className="w3-content w3-section"><Community /></main>)
       case("linkedList"):
         return(<main className="App-main"><LinkedListController /></main>)
+      case("fifolifo"):
+        return(<main className="App-main"><FifoLifo /></main>)
       default:
         return(<main className="App-main"><Home /></main>)
     }
