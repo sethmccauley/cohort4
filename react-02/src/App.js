@@ -4,7 +4,7 @@ import Home from './components/home';
 import Game from './components/game/game';
 import AccountController from './components/accounts/accountController';
 import Community from './components/citycommunity/community';
-import LinkedList from './components/linkedlist/linkedlist';
+import LinkedListController from './components/linkedlist/linkedlistcontroller';
 import './App.css';
 import './w3.css';
 
@@ -28,7 +28,7 @@ class App extends React.Component {
       case("cities"):
         return(<main className="w3-content w3-section"><Community /></main>)
       case("linkedList"):
-        return(<main className="App-main"><LinkedList /></main>)
+        return(<main className="App-main"><LinkedListController /></main>)
       default:
         return(<main className="App-main"><Home /></main>)
     }
