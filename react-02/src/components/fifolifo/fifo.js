@@ -20,7 +20,7 @@ function Fifo(props) {
         let display = localFifo.collection.map((value, i) => {
             return (<div key={i}>
                         <span style={{fontSize: '12px'}}>{value + (i === 0 ? ' is first now!' : '')} </span>
-                        <i className={'fa a fa-user-o ' + (i === 0 && adding === true ? 'w3-animate-top' : '')}></i>
+                        <i className={'fa a fa-user-o ' + (i === 0 && adding === true ? 'w3-animate-bottom' : '')}></i>
                     </div>)
         })
         return display

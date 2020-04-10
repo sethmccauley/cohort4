@@ -20,7 +20,7 @@ function Lifo() {
         let display = localLifo.collection.map((value, i) => {
             return (<div 
                     className={'w3-round-small ' + (i === 0 && adding === true ? 'w3-animate-right' : '')}
-                    style={{minHeight: '13px', maxHeight: '16px', width: '65px', margin: '1px auto', backgroundColor: '#cc9900', border: '1px solid black', lineHeight: '4px'}}
+                    style={{minHeight: '20px', maxHeight: '20px', width: '65px', margin: '1px auto', backgroundColor: '#cc9900', border: '1px solid black', lineHeight: '4px'}}
                     key={localLifo.collection.length - i}
                     >
                         <span style={{fontSize: '10px'}}>{localLifo.collection.length - i}</span>
