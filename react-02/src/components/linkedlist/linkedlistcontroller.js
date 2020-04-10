@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LinkedList from './linkedlist-v'
+import LinkedList from './linkedlist-pojo'
 
 const localList = new LinkedList()
 

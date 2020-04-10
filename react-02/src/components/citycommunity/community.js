@@ -1,6 +1,6 @@
 import React from 'react';
 import City from './city.js';
-import Community from './citycommunity-v';
+import Community from './citycommunity-pojo';
 import * as cityExamples from './cityexamples.json';
 
 const CommunityController = new Community()

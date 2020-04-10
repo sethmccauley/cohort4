@@ -1,6 +1,6 @@
 import React from 'react';
 import Account from './account.js';
-import { AccountController as AccController } from './account-v';
+import { AccountController as AccController } from './account-pojo';
 
 const accountController = new AccController()
 
