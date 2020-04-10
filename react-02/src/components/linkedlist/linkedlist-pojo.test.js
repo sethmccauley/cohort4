@@ -1,4 +1,4 @@
-import LinkedList from './linkedlist-v.js';
+import LinkedList from './linkedlist-pojo.js';
 
 test('Testing Node contstructor and show method.', () => {
     const newList = new LinkedList();
@@ -73,5 +73,4 @@ test('Testing LinkedList deletion on boundary case.', () => {
     newList.next()
     newList.next()
     expect(newList.currentNode.show()).toBe('Subject: Sixth; Amount: 6')
-
 })

@@ -15,10 +15,10 @@ class Node {
 }
 
 export default class LinkedList {
-    constructor(){
-        this.currentNode = null;
-        this.headNode = null;
-        this._length = 0
+    constructor(currentNode, headNode, length){
+        this.currentNode = currentNode || null;
+        this.headNode = headNode || null;
+        this._length = length || 0;
     }
 
     first(){
