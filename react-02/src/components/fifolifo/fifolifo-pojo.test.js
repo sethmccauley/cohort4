@@ -1,17 +1,17 @@
-import { Fifo, Lifo } from './fifolifo-v';
+import { Queue, Stack } from './fifolifo-pojo';
 
 test('Create and add a value to a Fifo or Lifo queue.', () => {
-    const newFifo = new Fifo();
+    const newFifo = new Queue();
     expect(newFifo.push(5)).toBe(1);
     expect(newFifo.push(10)).toBe(2);
 
-    const newLifo = new Lifo();
+    const newLifo = new Stack();
     expect(newLifo.push(6)).toBe(1);
     expect(newLifo.push({Dictionary: 'Yes'})).toBe(2);
 })
 
 test('Test Lifo "pop"ing of values.', () => {
-    const newLifo = new Lifo();
+    const newLifo = new Stack();
     newLifo.push(1)
     newLifo.push(2)
     newLifo.push(3)
@@ -24,7 +24,7 @@ test('Test Lifo "pop"ing of values.', () => {
 })
 
 test('Test Fifo "shift"ing of value.', () => {
-    const newFifo = new Fifo();
+    const newFifo = new Queue();
     newFifo.push(1)
     newFifo.push(2)
     newFifo.push(3)

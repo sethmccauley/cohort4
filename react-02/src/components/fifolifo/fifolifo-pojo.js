@@ -9,7 +9,7 @@ class Structure{
 }
 
 // Stack Implementation
-export class Lifo extends Structure{
+export class Stack extends Structure{
     constructor(){
         super();
     }
@@ -20,7 +20,7 @@ export class Lifo extends Structure{
 }
 
 // Queue Implementation
-export class Fifo extends Structure{
+export class Queue extends Structure{
     constructor(){
         super();
     }
