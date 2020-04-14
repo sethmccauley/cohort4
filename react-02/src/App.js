@@ -18,9 +18,7 @@ class App extends React.Component {
     this.state = {
       display: "home",
       headings: '#FFFFFF',
-      highlights: '#4078c0',
       setHeadings: this.setHeading,
-      setHighlights: this.setHighlight 
     }
     this.setDisplay = this.setDisplay.bind(this)
   }
@@ -30,11 +28,7 @@ class App extends React.Component {
       headings: input
     })
   }
-  setHighlight = input => {
-    this.setState({
-      highlights: input
-    })
-  }
+
 
   choosePage() {
     switch (this.state.display){
