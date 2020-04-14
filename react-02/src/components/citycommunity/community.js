@@ -2,6 +2,7 @@ import React from 'react';
 import City from './city.js';
 import Community from './citycommunity-pojo';
 import * as cityExamples from './cityexamples.json';
+import { ThemeContext } from '../../context/themecontext';
 
 const CommunityController = new Community()
 
@@ -111,27 +112,31 @@ class CommunityComponent extends React.Component {
         const showOrHide = (this.state.control.cityList.length > 0) ? 'w3-show' : 'w3-hide'
 
         return (
-            <div className="w3-content w3-section">
-                <h1 style={{color: 'white'}}>Community Manager</h1>
-                <p style={{color: 'white'}}>Create a community. Start by generating a city!</p>
-                <div className="w3-row-padding">
-                    <div className="w3-card-2 w3-col s3 m3 l3 w3-light-grey w3-margin" style={{fontSize: '.8em', fontFamily: 'Verdana', lineHeight: '.9em'}}>
-                        <h4 style={{fontWeight: '600'}}>Create City</h4>
-                        <input type="text" className="w3-input w3-border w3-rounded-small" id="cityName" placeholder="City Name" ref={el => this.cityName = el} onChange={this.handleChange} /><br />
-                        <input type="number" className="w3-input w3-border w3-rounded-small" id="cityLat" placeholder="Latitude" ref={el => this.cityLat = el} onChange={this.handleChange} /><br />
-                        <input type="number" className="w3-input w3-border w3-rounded-small" id="cityLong" placeholder="Longitude" ref={el => this.cityLong = el} onChange={this.handleChange} /><br />
-                        <input type="number" className="w3-input w3-border w3-rounded-small" id="cityPop" placeholder="Population" ref={el => this.cityPop = el} onChange={this.handleChange} /><br />
-                        <button className="w3-button w3-block w3-blue w3-ripple w3-padding" id="addCityBtn" onClick={this.submitCity}>+ Add City +</button><br />
-                        <button className="w3-button w3-block w3-light-blue w3-ripple w3-padding" id="addRandom" onClick={this.generateRandom}>+ Generate Random +</button><br />
-                        <div id="summary" className={showOrHide + " w3-section w3-left"} style={{lineHeight: '1.2em',fontSize: '1em'}}>
-                            <b>Most Northern: {this.getMostNorthern().name}</b><br />
-                            <b>Most Southern: {this.getMostSouthern().name}</b><br />
-                            <b>Total Pop.: {this.getPopulation()}</b>
+            <ThemeContext.Consumer>
+                {({headings}) => (
+                    <div className="w3-content w3-section">
+                        <h1 style={{color: headings}}>Community Manager</h1>
+                        <p style={{color:  headings}}>Create a community. Start by generating a city!</p>
+                        <div className="w3-row-padding">
+                            <div className="w3-card-2 w3-col s3 m3 l3 w3-light-grey w3-margin" style={{fontSize: '.8em', fontFamily: 'Verdana', lineHeight: '.9em'}}>
+                                <h4 style={{fontWeight: '600'}}>Create City</h4>
+                                <input type="text" className="w3-input w3-border w3-rounded-small" id="cityName" placeholder="City Name" ref={el => this.cityName = el} onChange={this.handleChange} /><br />
+                                <input type="number" className="w3-input w3-border w3-rounded-small" id="cityLat" placeholder="Latitude" ref={el => this.cityLat = el} onChange={this.handleChange} /><br />
+                                <input type="number" className="w3-input w3-border w3-rounded-small" id="cityLong" placeholder="Longitude" ref={el => this.cityLong = el} onChange={this.handleChange} /><br />
+                                <input type="number" className="w3-input w3-border w3-rounded-small" id="cityPop" placeholder="Population" ref={el => this.cityPop = el} onChange={this.handleChange} /><br />
+                                <button className="w3-button w3-block w3-blue w3-ripple w3-padding" id="addCityBtn" onClick={this.submitCity}>+ Add City +</button><br />
+                                <button className="w3-button w3-block w3-light-blue w3-ripple w3-padding" id="addRandom" onClick={this.generateRandom}>+ Generate Random +</button><br />
+                                <div id="summary" className={showOrHide + " w3-section w3-left"} style={{lineHeight: '1.2em',fontSize: '1em'}}>
+                                    <b>Most Northern: {this.getMostNorthern().name}</b><br />
+                                    <b>Most Southern: {this.getMostSouthern().name}</b><br />
+                                    <b>Total Pop.: {this.getPopulation()}</b>
+                                </div>
+                            </div>
+                            {cityCards}
                         </div>
                     </div>
-                    {cityCards}
-                </div>
-            </div>
+                )}
+            </ThemeContext.Consumer>
         );
     }
 }

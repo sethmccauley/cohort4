@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import LinkedList from './linkedlist-pojo'
+import LinkedList from './linkedlist-pojo';
+import { ThemeContext } from '../../context/themecontext';
 
 const localList = new LinkedList()
 
@@ -61,33 +62,37 @@ function LinkedListController(props){
     }
 
     return (
-        <div className="w3-content w3-section">
-            <h1 style={{color: 'white'}}>Linked List Manager</h1>
-            <p style={{color: 'white'}}></p>
-            <div className="w3-row-padding w3-margin-top" style={{minHeight: '10vh'}}>
-                <span style={{color: '#00cc66'}}>Current Node:</span> { current } <br />
-                Total of all Nodes: { total }
-            </div>
-            <div className="w3-row w3-row-padding w3-margin w3-white w3-border w3-round-small" style={{minWidth: '700px'}}>
-                <h3>Control Panel</h3>
-                <div className="w3-col s3 m2 l2 w3-center-align">
-                    <i className="fa fa-angle-double-left fa-2x" title="First Record" onClick={() => handleTraversal('first')}></i>&nbsp;
-                    <i className="fa fa-chevron-circle-left fa-2x" title="Previous Record"onClick={() => handleTraversal('previous')}></i><br />
-                    <p className="w3-small">First | Previous</p>
+        <ThemeContext.Consumer>
+            {({headings}) => (
+                <div className="w3-content w3-section">
+                    <h1 style={{color: headings}}>Linked List Manager</h1>
+                    <p style={{color: 'white'}}></p>
+                    <div className="w3-row-padding w3-margin-top" style={{minHeight: '10vh'}}>
+                        <span style={{color: '#00cc66'}}>Current Node:</span> { current } <br />
+                        Total of all Nodes: { total }
+                    </div>
+                    <div className="w3-row w3-row-padding w3-margin w3-white w3-border w3-round-small" style={{minWidth: '700px'}}>
+                        <h3>Control Panel</h3>
+                        <div className="w3-col s3 m2 l2 w3-center-align">
+                            <i className="fa fa-angle-double-left fa-2x" title="First Record" onClick={() => handleTraversal('first')}></i>&nbsp;
+                            <i className="fa fa-chevron-circle-left fa-2x" title="Previous Record"onClick={() => handleTraversal('previous')}></i><br />
+                            <p className="w3-small">First | Previous</p>
+                        </div>
+                        <div className="w3-col s6 m8 l8 w3-left-align" style={{fontSize: '.8em', fontFamily: 'Verdana', lineHeight: '.9em'}}>
+                            Subject: <input className="w3-input w3-small w3-border w3-round-small" type="text" onChange={handleSubjectChange} style={{height: '30px', width: '100%'}} /><br />
+                            Amount: <input className="w3-input w3-small w3-border w3-round-small" type="number" onChange={handleAmountChange} style={{height: '30px', width: '100%'}} /><br />
+                            <button className="w3-button w3-block w3-blue w3-ripple w3-padding" onClick={handleInsert} >+ Insert Record To List +</button><br />
+                            <button className="w3-button w3-block w3-grey w3-ripple w3-padding" onClick={handleDelete}>- Delete Current Record -</button><br />
+                        </div>
+                        <div className="w3-col s3 m2 l2 w3-center-align">
+                            <i className="fa fa-chevron-circle-right fa-2x" title="Next Record" onClick={() => handleTraversal('next')}></i>&nbsp;
+                            <i className="fa fa-angle-double-right fa-2x" title="Last Record" onClick={() => handleTraversal('last')}></i><br />
+                            <p className="w3-small">Next | Last</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="w3-col s6 m8 l8 w3-left-align" style={{fontSize: '.8em', fontFamily: 'Verdana', lineHeight: '.9em'}}>
-                    Subject: <input className="w3-input w3-small w3-border w3-round-small" type="text" onChange={handleSubjectChange} style={{height: '30px', width: '100%'}} /><br />
-                    Amount: <input className="w3-input w3-small w3-border w3-round-small" type="number" onChange={handleAmountChange} style={{height: '30px', width: '100%'}} /><br />
-                    <button className="w3-button w3-block w3-blue w3-ripple w3-padding" onClick={handleInsert} >+ Insert Record To List +</button><br />
-                    <button className="w3-button w3-block w3-grey w3-ripple w3-padding" onClick={handleDelete}>- Delete Current Record -</button><br />
-                </div>
-                <div className="w3-col s3 m2 l2 w3-center-align">
-                    <i className="fa fa-chevron-circle-right fa-2x" title="Next Record" onClick={() => handleTraversal('next')}></i>&nbsp;
-                    <i className="fa fa-angle-double-right fa-2x" title="Last Record" onClick={() => handleTraversal('last')}></i><br />
-                    <p className="w3-small">Next | Last</p>
-                </div>
-            </div>
-        </div>
+            )}
+        </ThemeContext.Consumer>
     )
 }
 

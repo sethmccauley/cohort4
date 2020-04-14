@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeContext } from '../../context/themecontext'
 
 function Square(props) {
     return (
@@ -101,16 +102,20 @@ class Game extends React.Component {
         }
 
         return (
-            <div className="App-main">
-                <div className="game-board">
-                    <h1> Tic Tac Toe </h1>
-                    <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
-                </div>
-                <div className="game-info">
-                <div>{status}</div>
-                <ol>{moves}</ol>
-                </div>
-            </div>
+            <ThemeContext.Consumer>
+                {({headings}) => (
+                    <div className="App-main">
+                        <div className="game-board">
+                            <h1 style={{color: headings}}> Tic Tac Toe </h1>
+                            <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
+                        </div>
+                        <div className="game-info">
+                        <div>{status}</div>
+                        <ol>{moves}</ol>
+                        </div>
+                    </div>
+                )}
+            </ThemeContext.Consumer>
         )
     }
 }

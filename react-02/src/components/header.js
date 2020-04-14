@@ -5,6 +5,7 @@ import PsSVG from './svg/ps.js';
 import XboxSVG from './svg/xbox.js';
 import N64SVG from './svg/n64.js';
 import GameboySVG from './svg/gameboy.js';
+import OneupSVG from './svg/oneup.js';
 
 class Header extends React.Component {
     render() {
@@ -17,6 +18,7 @@ class Header extends React.Component {
                 <XboxSVG height="150px" width="150px" className="App-svg" title="City / Community" navChange={this.props.navChange} active={this.props.active}/>
                 <N64SVG height="150px" width="150px" className="App-svg" title="Linked List" navChange={this.props.navChange} active={this.props.active}/>
                 <GameboySVG height="150px" width="150px" className="App-svg" title="FIFO / LIFO" navChange={this.props.navChange} active={this.props.active}/>
+                <OneupSVG height="150px" width="150px" className="App-svg" title="Theme Selector" navChange={this.props.navChange} active={this.props.active}/>
             </div>
         );
     }

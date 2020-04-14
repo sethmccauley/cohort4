@@ -6,6 +6,9 @@ import AccountController from './components/accounts/accountController';
 import Community from './components/citycommunity/community';
 import LinkedListController from './components/linkedlist/linkedlistcontroller';
 import FifoLifo from './components/fifolifo/fifolifo';
+import { ThemeContext } from './context/themecontext';
+import ThemeSelector from './components/themeselector';
+
 import './App.css';
 import './w3.css';
 
@@ -14,8 +17,23 @@ class App extends React.Component {
     super();
     this.state = {
       display: "home",
+      headings: '#FFFFFF',
+      highlights: '#4078c0',
+      setHeadings: this.setHeading,
+      setHighlights: this.setHighlight 
     }
     this.setDisplay = this.setDisplay.bind(this)
+  }
+
+  setHeading = input => {
+    this.setState({
+      headings: input
+    })
+  }
+  setHighlight = input => {
+    this.setState({
+      highlights: input
+    })
   }
 
   choosePage() {
@@ -32,6 +50,8 @@ class App extends React.Component {
         return(<main className="App-main"><LinkedListController /></main>)
       case("fifolifo"):
         return(<main className="App-main"><FifoLifo /></main>)
+      case("theme"):
+        return(<main className="w3-content w3-section"><ThemeSelector /></main>)
       default:
         return(<main className="App-main"><Home /></main>)
     }
@@ -45,14 +65,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <Header active={this.state.display} navChange={this.setDisplay} />
-        </header>
-        {this.choosePage()}
-        <footer className="App-footer">
-        </footer>
-      </div>
+      <ThemeContext.Provider value={this.state}>
+        <div className="App">
+          <header className="App-header">
+            <Header active={this.state.display} navChange={this.setDisplay} />
+          </header>
+            {this.choosePage()}
+          <footer className="App-footer">
+          </footer>
+        </div>
+      </ThemeContext.Provider>
     );
   }
 }

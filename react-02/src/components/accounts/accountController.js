@@ -1,6 +1,7 @@
 import React from 'react';
 import Account from './account.js';
 import { AccountController as AccController } from './account-pojo';
+import { ThemeContext } from '../../context/themecontext'
 
 const accountController = new AccController()
 
@@ -102,43 +103,47 @@ class AccountController extends React.Component {
         const showOrHide = (this.state.control.accountList.length > 0) ? 'w3-show' : 'w3-hide'
 
         return (
-            <div className="w3-content w3-section">
-                <h1 style={{color: 'white'}}> Account Management </h1>
-                <p style={{color: 'white'}}>Keep track of your finances.</p>
-                <div className="w3-container w3-card-4 w3-light-grey w3-border w2-round-small w3-padding w3-margin-bottom" style={{width: '100%', height: '100%'}}>
-                    <div className="w3-col" style={{width: '50px'}}>
-                        <i className="w3-xxlarge fa fa-user-circle fa-2x"></i>
-                    </div>
-                    <div className="w3-rest">
-                        <input className="w3-input w3-border w3-radius-small" type="text" ref={el => this.name = el} placeholder="Account Name" id="name" onChange={this.handleChange}></input>
-                    </div>
-                    <div className="w3-row w3-section">
-                        <div className="w3-col" style={{width: '50px'}}>
-                            <i className="w3-xxlarge fa fa-money fa-2x"></i>
-                        </div>
-                        <div className="w3-rest">
-                            <input className="w3-input w3-border w3-radius-small" type="number"  ref={el => this.balance = el} placeholder="Initial Balance" id="balance" onChange={this.handleChange}></input>
-                        </div>
-                    </div>
+            <ThemeContext.Consumer>
+                {({headings}) => (
+                    <div className="w3-content w3-section">
+                        <h1 style={{color: headings}}> Account Management </h1>
+                        <p style={{color: 'white'}}>Keep track of your finances.</p>
+                        <div className="w3-container w3-card-4 w3-light-grey w3-border w2-round-small w3-padding w3-margin-bottom" style={{width: '100%', height: '100%'}}>
+                            <div className="w3-col" style={{width: '50px'}}>
+                                <i className="w3-xxlarge fa fa-user-circle fa-2x"></i>
+                            </div>
+                            <div className="w3-rest">
+                                <input className="w3-input w3-border w3-radius-small" type="text" ref={el => this.name = el} placeholder="Account Name" id="name" onChange={this.handleChange}></input>
+                            </div>
+                            <div className="w3-row w3-section">
+                                <div className="w3-col" style={{width: '50px'}}>
+                                    <i className="w3-xxlarge fa fa-money fa-2x"></i>
+                                </div>
+                                <div className="w3-rest">
+                                    <input className="w3-input w3-border w3-radius-small" type="number"  ref={el => this.balance = el} placeholder="Initial Balance" id="balance" onChange={this.handleChange}></input>
+                                </div>
+                            </div>
 
-                    <button id="addAccount" className="w3-button w3-block w3-teal w3-ripple w3-padding" onClick={this.addAccount}>+ Add Account +</button>
+                            <button id="addAccount" className="w3-button w3-block w3-teal w3-ripple w3-padding" onClick={this.addAccount}>+ Add Account +</button>
 
-                    <div className={showOrHide + ' w3-row w3-section w3-center w3-display-container w3-space-between'} style={{display: 'flex', alignItems: 'center'}} id="summary">
+                            <div className={showOrHide + ' w3-row w3-section w3-center w3-display-container w3-space-between'} style={{display: 'flex', alignItems: 'center'}} id="summary">
 
-                        <div className="w3-col s4 w3-padding-small w3-amber w3-round-small"><strong>Largest Account</strong>
-                            <br /><span id="largestAccount">{largest}</span>
-                        </div>
-                        <div className="w3-col s4 w3-padding-small w3-deep-orange w3-round-small"><strong>Smallest Account</strong>
-                            <br /><span id="smallestAccount">{smallest}</span>
-                        </div>
-                        <div className="w3-col s4 w3-padding-small w3-blue-grey w3-round-small"><strong>Sum of Accounts</strong>
-                            <br /><span id="sumOfAccounts">${sum}</span>
-                        </div>
+                                <div className="w3-col s4 w3-padding-small w3-amber w3-round-small"><strong>Largest Account</strong>
+                                    <br /><span id="largestAccount">{largest}</span>
+                                </div>
+                                <div className="w3-col s4 w3-padding-small w3-deep-orange w3-round-small"><strong>Smallest Account</strong>
+                                    <br /><span id="smallestAccount">{smallest}</span>
+                                </div>
+                                <div className="w3-col s4 w3-padding-small w3-blue-grey w3-round-small"><strong>Sum of Accounts</strong>
+                                    <br /><span id="sumOfAccounts">${sum}</span>
+                                </div>
 
+                            </div>
+                        </div>
+                        {accountCards}
                     </div>
-                </div>
-                {accountCards}
-            </div>
+                )}
+            </ThemeContext.Consumer>
         );
     }
 }
