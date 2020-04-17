@@ -1,7 +1,7 @@
 export class Account{
-    constructor(name, initBalance){
+    constructor(name, balance){
         this.name = name;
-        this.totalBalance = initBalance;
+        this.totalBalance = balance;
     }
 
     deposit(amount){
@@ -57,7 +57,7 @@ export class AccountController{
     sumAccounts(){
         let amount = 0;
         this.accountList.forEach( (value) => {
-            amount += parseFloat(value.totalBalance, 10);
+            amount += parseFloat(value.balance(), 10);
         })
         return parseFloat(amount, 10);
     }
