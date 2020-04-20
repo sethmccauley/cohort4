@@ -78,5 +78,5 @@ test('Getting initial cities. (Empty)', async () =>{
     let newerCommunity = new Community();
     await newerCommunity.getInitialCities()
     expect(newerCommunity.cityList.length).toBe(3)
-    const resp = await functions.postData('http://127.0.0.1:5000/clear'
+    const resp = await functions.postData('http://127.0.0.1:5000/clear')
 })

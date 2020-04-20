@@ -26,17 +26,11 @@ class AccountController extends React.Component {
         if(this.addedAccount.name === '') return alert('Please input an account name.')
         let accounts = this.state.control
 
-        let newState = new AccountController()
         let determineId = accounts.accountList.findIndex(value => value.name === this.addedAccount.name)
-        if(determineId === -1) {
-            newState = Object.assign(this.state.control)
-            newState.addAccount(this.addedAccount.name, this.addedAccount.balance)
-        } else {
-            return alert('Please input a unique account name.')
-        } 
+        determineId === -1 ? accounts.addAccount(this.addedAccount.name, this.addedAccount.balance) : alert('Please input a unique account name.')
 
         this.setState({
-            control: newState
+            control: accounts
         })
         this.name.value = ''
         this.balance.value = ''
