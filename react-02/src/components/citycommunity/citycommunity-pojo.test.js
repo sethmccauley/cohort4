@@ -75,5 +75,8 @@ test('Getting initial cities. (Empty)', async () =>{
     await newCommunity.createCity('Sydney',-33.87,151,100000);
     await newCommunity.createCity('Rome',41.902782,12.496365,1000000);
     await newCommunity.createCity('Lincoln',40.8135,-967026,300000);
-    await newCommunity.getInitialCities()
+    let newerCommunity = new Community();
+    await newerCommunity.getInitialCities()
+    expect(newerCommunity.cityList.length).toBe(3)
+    const resp = await functions.postData('http://127.0.0.1:5000/clear'
 })
