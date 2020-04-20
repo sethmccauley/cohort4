@@ -24,10 +24,10 @@ test('Test the collection of accounts is working.', () => {
 
 test('Sorting out removal, and largest/smallest of accounts.', () => {
     const newCollection = new AccountController();
-    newCollection.addAccount('one',100);
     newCollection.addAccount('two',200);
     newCollection.addAccount('three',987654);
     newCollection.addAccount('four',201);
+    newCollection.addAccount('one',100);
 
     expect(newCollection.returnLargest().name).toBe('three');
     expect(newCollection.returnSmallest().name).toBe('one');

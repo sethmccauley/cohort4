@@ -8,7 +8,7 @@ const ThemeSelector = () => {
                 <div>
                     <h1 style={{color: headings}}>Theme Manager</h1>
                     <div className='w3-content w3-section w3-border w3-round-small w3-light-grey'>
-                        <h4>Heading Color: <br /><input type='color' value="#00FFCC" style={{height: '50px', width: '50px'}} onChange={(e) => setHeadings(e.target.value)}></input></h4>
+                        <h4>Heading Color: <br /><input type='color' value={headings} style={{height: '50px', width: '50px'}} onChange={(e) => setHeadings(e.target.value)}></input></h4>
                     </div>
                 </div>
             )}

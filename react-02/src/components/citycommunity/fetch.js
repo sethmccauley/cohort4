@@ -1,3 +1,5 @@
+const fetch = require('node-fetch')
+
 const functions = {
 
     async postData(url = '', data = {}){
