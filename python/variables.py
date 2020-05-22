@@ -52,3 +52,5 @@ friends = [
     {"name": "Madi","age": 14},
 ]
 print(friends[3]["name"])
+# for var,var2 in for dictionaries.items() will iterate through key,values
+# for in on dictionaries can have values or variables to test if key exists

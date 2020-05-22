@@ -5,4 +5,6 @@ doubled = [num * 2 for num in numbas]
 
 foods = ['Apple', 'Banana', 'Orange']
 starts_o = [food for food in foods if food.startswith('O')]
-print(starts_o)
+# starts_o => ["Orange"]
+# conditionals like 'if' goes after the iterator
+
