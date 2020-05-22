@@ -39,3 +39,16 @@ print(1 != 5)
 # Comparision operators will evaluate to bool
 # ==, !=, >, <, >=, <=, 
 # 'is' keyword checks reference equality
+
+friend_ages = {"Sally": 88, "Sef": 38, "William": 24, "Madi": 14}
+print(friend_ages["Sally"])
+# Dictionaries, associated set.
+# Must use subscript notation to access the value @ the key.
+# Lists of dictionaries
+friends = [
+    {"name": "Sally","age": 88},
+    {"name": "Sef","age": 38},
+    {"name": "William","age": 24},
+    {"name": "Madi","age": 14},
+]
+print(friends[3]["name"])
