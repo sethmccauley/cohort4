@@ -17,7 +17,8 @@ def add(*nums):
     return sum
 
 print(add(5,4,3,2,1))
-# Able to pass an aggregator of options (*) (**)
+# Able to pass an aggregator of options (*) => Creates a tuple of input args
+# **args will unpack into a dictionary as named arguments.
 # named parameters can be passed also
 # add(first=1, second=2)
 # keywords don't care about placement in parameter window
@@ -28,3 +29,4 @@ print(add(5,4,3,2,1))
 # function(x, y=1):
 #   Do things
 # When y is not supplied, 1 will be used by default.
+
