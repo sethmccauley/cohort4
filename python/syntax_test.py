@@ -14,5 +14,11 @@ def test_isBool():
     assert syntax.is_bool(False) == True
     assert syntax.is_bool('No') == False
 
+def test_hitOrStand():
+    assert syntax.hitOrStand(17) == 'Stand'
+    assert syntax.hitOrStand(1) == 'Hit'
+    assert syntax.hitOrStand(22) == 'Play Again?'
 
+def test_stringTogether():
+    assert syntax.stringTogether('a','b','c') == 'abc'
 

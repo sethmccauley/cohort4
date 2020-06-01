@@ -18,3 +18,16 @@ def is_list(arg):
 def is_dict(arg):
     return type(arg) is set
 
+# Sample if / else
+
+def hitOrStand(total):
+    if total < 17:
+        return 'Hit'
+    if total < 22:
+        return 'Stand'
+    return 'Play Again?'
+
+# Functions, Parameters, Returns
+
+def stringTogether(*args):
+    return ''.join(str(i) for i in args)
