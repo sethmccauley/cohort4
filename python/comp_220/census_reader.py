@@ -9,7 +9,7 @@ lines = 0
 
 with open(os.getcwd() + '/comp_220/Census_by_Community_2019.csv','r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
-
+    
     headers = next(csv_reader)
     ttlDictionary = {option: defaultdict(int) for option in groupBy}
 
