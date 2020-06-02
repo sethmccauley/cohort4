@@ -26,6 +26,6 @@ for groupings in groupBy:
 
 print('Lines read: ', lines)
 
-text_file = open('output.txt', 'w')
+text_file = open(os.getcwd() + '/comp_220/output.txt', 'w')
 text_file.write(json.dumps(ttlDictionary))
 text_file.close()
