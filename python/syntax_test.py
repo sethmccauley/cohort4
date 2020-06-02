@@ -22,3 +22,17 @@ def test_hitOrStand():
 def test_stringTogether():
     assert syntax.stringTogether('a','b','c') == 'abc'
 
+def test_getDefaultAnswer():
+    assert syntax.getDefaultAnswer(answer='A') == 'A'
+    assert syntax.getDefaultAnswer() == 'C'
+
+def test_email():
+    assert syntax.email('seth','mccauley') == 'seth.mccauley@evolveu.ca'
+    assert syntax.email('hi',3) == 'Type Error.'
+    assert syntax.email(' ',' ') == 'Missing Arguments.'
+    assert syntax.email('senor',' ') == 'Missing Arguments.'
+
+def test_calculateTax():
+    assert syntax.calculateTax(48535) == 7280
+    assert syntax.calculateTax(2) == .3
+    assert syntax.calculateTax(250000) == 61403.56
