@@ -18,15 +18,13 @@ with open(os.getcwd() + '/comp_220/Census_by_Community_2019.csv','r') as csv_fil
         for index in ttlDictionary:
             ttlDictionary[index][line[headers.index(index)]] += int(line[headers.index(tally)])
 
-print('Summary by Class: ')
-for key in ttlDictionary['CLASS']:
-    print(key,": ", ttlDictionary['CLASS'][key])
+for groupings in groupBy:
+    print('Summary by ' + groupings.lower() + ':')
+    for key in ttlDictionary[groupings]:
+        print(f'{key}: ', ttlDictionary[groupings][key])
+    print('')
 
-print('\nSummary by Sector: ')
-for key in ttlDictionary['SECTOR']:
-    print(key,": ", ttlDictionary['SECTOR'][key])
-
-print('\nLines read: ', lines)
+print('Lines read: ', lines)
 
 text_file = open('output.txt', 'w')
 text_file.write(json.dumps(ttlDictionary))
