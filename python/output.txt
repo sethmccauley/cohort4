@@ -1,0 +1,1 @@
+{"CLASS": {"Residential": 1282221, "Residual Sub Area": 0, "Industrial": 956, "Major Park": 0}, "SECTOR": {"SOUTH": 230129, "CENTRE": 202092, "NORTHEAST": 188567, "NORTHWEST": 174515, "EAST": 58122, "WEST": 125409, "NORTH": 164363, "SOUTHEAST": 139980}}
