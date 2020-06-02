@@ -1,6 +1,6 @@
 import os
 
-directory = 'E:\Work\cohort4\python\comp_200'
+directory = 'E:/Work/cohort4/python/comp_200'
 
 # List comprehension for rifling through files.
 
