@@ -5,7 +5,7 @@ from collections import defaultdict
 localFile = os.getcwd() + '/store_db.xlsx'
 
 def breakIntoDict(file):
-    wb = load_workbook(localFile)
+    wb = load_workbook(file)
     builtDict = {}
     for sheet in wb.sheetnames:
         builtDict[sheet] = {}

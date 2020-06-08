@@ -33,3 +33,7 @@ def test_join():
     # Total number of Unique Invoice Line Items for Invoices of Customer ID: 1 with Invoice ID: 3
     total_items = helpers.innerJoin(merged, invoice_items, 'invoice_id', 3)
     assert len(total_items) == 2
+
+    tester = helpers.innerJoin(invoices,customers, 'customer_id')
+    tester = helpers.innerJoin(tester,invoice_items, 'invoice_id', 1)
+    print(tester)
