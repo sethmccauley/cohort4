@@ -11,6 +11,7 @@ def requestInvoice():
         storeDb = helpers.breakIntoDict(localFile)
     except:
         print(f'Issue loading file {localFile}')
+        raise
 
     try: # Find Invoice ID First
         for rows in storeDb['invoices'].values():
@@ -23,7 +24,7 @@ def requestInvoice():
             raise ValueError
     except ValueError:
         print(f'Invoice {invoiceNumber} not found.')
-        return
+        raise
 
     try: # Attempt Joins
         firstMerge = helpers.innerJoin(storeDb['invoices'], storeDb['customers'], 'customer_id')
@@ -32,11 +33,14 @@ def requestInvoice():
         print(f'Found invoice {invoiceNumber} with {len(secondMerge)} items.')
     except:
         print('Merging database pages failed.')
+        raise
 
     try: # Write to File
         writeToFile(thirdMerge)
+        print(f'Written to file Invoice_{invoiceNumber}.xlsx')
     except:
         print('Writing invoice to file failed.')
+        raise
     return
 
 def writeToFile(invoiceDictionary):
