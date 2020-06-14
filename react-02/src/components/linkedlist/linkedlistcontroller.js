@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import LinkedList from './linkedlist-pojo';
 import { ThemeContext } from '../../context/themecontext';
 
-const localList = new LinkedList()
-
 function LinkedListController(props){
 
-    const [linkedList, setLinkedList] = useState(localList);
+    const [linkedList, setLinkedList] = useState(new LinkedList());
     const [subject, setSubject] = useState("");
     const [amount, setAmount] = useState("");
     const [current, setCurrent] = useState('{ null }');
