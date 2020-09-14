@@ -1,6 +1,6 @@
 # EvolveU Curriculum
 
-EvolveU is an immersive 6 month Full Stack Developer program that aims to teach programming fundamentals, frameworks and non-technical skills in an agile working environment including daily stand-ups, weekly sprints, and weekly retrospectives. Developers learn the skills needed to succeed in the workplace and foster the ability to adapt to the ever-changing tech space.
+EvolveU is an immersive 6 month Full Stack Developer program that aims to teach programming fundamentals, frameworks and non-technical skills in an agile working environment including daily stand-ups, weekly sprints, and weekly retrospectives. Developers learn the skills needed to succeed in the workplace and foster the ability to adapt to the ever-changing tech space. 
 
 Languages & Frameworks -
 ReactJS - Migration, hooks, context, lists
