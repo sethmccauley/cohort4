@@ -5,7 +5,7 @@ EvolveU is an immersive 6 month Full Stack Developer program that aims to teach 
 Languages & Frameworks -
 ReactJS - Migration, hooks, context, lists
 Python - Flask, REST APIs
-PostgreSQL, SQLite, Data Modelling
+PostgreSQL, SQLite, Data Modelling, ORM
 Unit Testing - Jest, PyTest
 Version control - Git, Github
 Microsoft - C# and Blazor
